@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,7 +11,8 @@ public class Player : MonoBehaviour
         MovingDown = -1,
         MovingLeft = 2,
         MovingRight = -2,
-        Standing = 0
+        Standing = 0,
+        Dead
     }
     
     
@@ -21,7 +23,9 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask enemiesLayerMask;
     [SerializeField] private LayerMask obstaclesLayer;
     [SerializeField] private float moveSpeed = 10f;
-    
+
+
+    [SerializeField] private PlayerAnimator playerAnimator;
     
     public MovementStates playerMovementState;
 
@@ -79,12 +83,18 @@ public class Player : MonoBehaviour
         {
             Vector3 moveDir3 = new Vector3(moveDir.x, moveDir.y, 0f);
             transform.position += moveDir3 * moveDistance;
-            transform.up = moveDir;
 
         }
         else
         {
-            TryToInteract(moveDir);
+            if (TryToInteract(moveDir))
+            {
+                playerAnimator.PlayAttack();
+            }
+            else
+            {
+                playerAnimator.PlayStop();
+            }
 
             playerMovementState = MovementStates.Standing;
             AdjustPosition();
@@ -112,7 +122,7 @@ public class Player : MonoBehaviour
         transform.position = new Vector3(Mathf.Round(position.x), Mathf.Round(position.y), 0);
     }
 
-    private void TryToInteract(Vector2 moveDir)
+    private bool TryToInteract(Vector2 moveDir)
     {
         float interactionDistance = 1f;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, moveDir, interactionDistance, enemiesLayerMask);
@@ -123,15 +133,25 @@ public class Player : MonoBehaviour
             if (enemy != null)
             {
                 enemy.Interact(this);
+                return true;
             }
         }
+
+        return false;
     }
-    
+
+
+    public void Die()
+    {
+        playerAnimator.PlayDie();
+        playerMovementState = MovementStates.Dead;
+    }
     private void InstanceOnOnMoveUp(object sender, EventArgs e)
     {
         if (playerMovementState == MovementStates.Standing)
         {
             playerMovementState = MovementStates.MovingUp;
+            playerAnimator.PlayRunUp();
         }
     }
 
@@ -140,13 +160,16 @@ public class Player : MonoBehaviour
         if (playerMovementState == MovementStates.Standing)
         {
             playerMovementState = MovementStates.MovingDown;
-        }    }
+            playerAnimator.PlayRunDown();
+        }    
+    }
 
     private void InstanceOnOnMoveLeft(object sender, EventArgs e)
     {
         if (playerMovementState == MovementStates.Standing)
         {
             playerMovementState = MovementStates.MovingLeft;
+            playerAnimator.PlayRunLeft();
         }
     }
 
@@ -155,7 +178,9 @@ public class Player : MonoBehaviour
         if (playerMovementState == MovementStates.Standing)
         {
             playerMovementState = MovementStates.MovingRight;
+            playerAnimator.PlayRunRight();
         }
     }
+    
 
 }
