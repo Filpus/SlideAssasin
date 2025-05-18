@@ -12,29 +12,23 @@ public class BaseEnemy : MonoBehaviour
         Right = -2
     }
 
+    [SerializeField] protected EnemyAnimator enemyAnimator;
 
     [SerializeField] protected Direction frontDirection = Direction.Up;
 
 
     protected void Start()
     {
-        switch (frontDirection)
-        {
-            case Direction.Up:
-                transform.up = Vector2.up;
-                break;
-            case Direction.Down:
-                transform.up = Vector2.down;
-                break;
-            case Direction.Left:
-                transform.up = Vector2.left;
-                break;
-            case Direction.Right:
-                transform.up = Vector2.right;
-                break;
-        }
+
+        enemyAnimator.SetDirection(frontDirection);
+        AdjustPosition();
     }
 
 
     public virtual void Interact(Player player){}
+    private void AdjustPosition()
+    {
+        Vector3 position = transform.position;
+        transform.position = new Vector3(Mathf.Round(position.x), Mathf.Round(position.y), 0);
+    }
 }

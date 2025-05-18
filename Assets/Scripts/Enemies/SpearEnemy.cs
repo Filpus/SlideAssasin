@@ -7,11 +7,12 @@ public class SpearEnemy : BaseEnemy
     {
         if ((int)this.frontDirection == (int)player.playerMovementState * -1)
         {
-          Debug.Log("Przegrałeś!");  
-          player.Die();
+            enemyAnimator.PlayEnemyAction();
+            player.Die();
         }
         else
         {
+            enemyAnimator.PlayEnemyDie();
             Destroy(gameObject);
         }
     }

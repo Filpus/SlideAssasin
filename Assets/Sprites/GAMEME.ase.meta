@@ -125,7 +125,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: GAMEME
     originalName: 
-    pivot: {x: 0.55548996, y: 0}
+    pivot: {x: 0.53395957, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,8 +133,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 847
-      height: 658
+      width: 1384
+      height: 1066
     spriteID: cb462fc1cf542674f8bb302d0c65e5a7
     spriteBone: []
     spriteOutline: []
@@ -159,8 +159,8 @@ ScriptedImporter:
       cellRect:
         x: -94
         y: 0
-        width: 847
-        height: 658
+        width: 1384
+        height: 1066
       spriteId: cb462fc1cf542674f8bb302d0c65e5a7
     linkedCells: []
     parentIndex: -1
@@ -180,5 +180,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 753, y: 512}
-  previousTextureSize: {x: 1024, y: 1024}
+  canvasSize: {x: 1290, y: 920}
+  previousTextureSize: {x: 2048, y: 2048}

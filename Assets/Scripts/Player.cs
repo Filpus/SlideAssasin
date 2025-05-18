@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     
     public MovementStates playerMovementState;
 
+    public static  event EventHandler PlayerMoved;
+
     private float playerSize = 1f;
     
 
@@ -151,6 +153,7 @@ public class Player : MonoBehaviour
         if (playerMovementState == MovementStates.Standing)
         {
             playerMovementState = MovementStates.MovingUp;
+            PlayerMoved?.Invoke(this, EventArgs.Empty);
             playerAnimator.PlayRunUp();
         }
     }
@@ -160,6 +163,7 @@ public class Player : MonoBehaviour
         if (playerMovementState == MovementStates.Standing)
         {
             playerMovementState = MovementStates.MovingDown;
+            PlayerMoved?.Invoke(this, EventArgs.Empty);
             playerAnimator.PlayRunDown();
         }    
     }
@@ -169,6 +173,7 @@ public class Player : MonoBehaviour
         if (playerMovementState == MovementStates.Standing)
         {
             playerMovementState = MovementStates.MovingLeft;
+            PlayerMoved?.Invoke(this, EventArgs.Empty);
             playerAnimator.PlayRunLeft();
         }
     }
@@ -178,6 +183,7 @@ public class Player : MonoBehaviour
         if (playerMovementState == MovementStates.Standing)
         {
             playerMovementState = MovementStates.MovingRight;
+            PlayerMoved?.Invoke(this, EventArgs.Empty);
             playerAnimator.PlayRunRight();
         }
     }
