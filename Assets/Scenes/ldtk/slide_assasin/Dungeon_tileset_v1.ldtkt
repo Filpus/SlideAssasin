@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 5,
+    "__cWid": 10,
+    "cachedPixelData": {
+      "opaqueTiles": "11111111111111111111111111110111011011011101101101",
+      "averageColors": "f333f233f333f233f233f223f233f233f323f233f444f333f775f333f223f533f223f323f633f323f754f333f233f333f223f223f223f3230000f323f222f2330000f233f2330000f233f2330000f233f233f2330000f233f2330122f233f2330000f233"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Dungeon_tileset_v1",
+    "padding": 0,
+    "pxHei": 90,
+    "pxWid": 180,
+    "relPath": "../../Sprites/Tileset.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 18,
+    "uid": 3
+  }
+}

@@ -1,0 +1,766 @@
+fileFormatVersion: 2
+guid: fdce18dcc2c2a6444a0d74cbe517f419
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 18
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Dungeon_tileset_v1_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 72
+      width: 18
+      height: 18
+    spriteID: e39b7214158d13d4e9a1e05553587203
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 18
+      y: 72
+      width: 18
+      height: 18
+    spriteID: ecb3f07501be6774f863f5b924528d6e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 72
+      width: 18
+      height: 18
+    spriteID: a10bc4b4cb0cba14e8fc2ab498c12b5b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 72
+      width: 18
+      height: 18
+    spriteID: c52d8a62548ffef4aa941eea1e853b78
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 72
+      width: 18
+      height: 18
+    spriteID: 1480942ceb5271141a9f7e3bea9f0d64
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 90
+      y: 72
+      width: 18
+      height: 18
+    spriteID: 23351463da836d1489e2a0347d96b791
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 108
+      y: 72
+      width: 18
+      height: 18
+    spriteID: 1aca68950415ac74c8c5aebcb40e742c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 72
+      width: 18
+      height: 18
+    spriteID: 8ce79122f4cf6bc4291dfa3ebdfca06d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 72
+      width: 18
+      height: 18
+    spriteID: ef608bef3b451824586ee3e9be037a67
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 162
+      y: 72
+      width: 18
+      height: 18
+    spriteID: 9554ef05a82a2534ab7ae82599a369c8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 54
+      width: 18
+      height: 18
+    spriteID: aab20b2dee3978042a8aa63816f370f8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 18
+      y: 54
+      width: 18
+      height: 18
+    spriteID: 94bf28981a0f28b4a98194061b847a91
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 54
+      width: 18
+      height: 18
+    spriteID: 1a543f93e99a2a0448ccad06aa879bf6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 54
+      width: 18
+      height: 18
+    spriteID: 4df4d3bdc17f34b44a52fd608d8350b4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 54
+      width: 18
+      height: 18
+    spriteID: 5b2c2c4aca3f64c43aa611d08dc7565a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 90
+      y: 54
+      width: 18
+      height: 18
+    spriteID: ce410a0f7538e5448b9f2ce0441f16a4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 108
+      y: 54
+      width: 18
+      height: 18
+    spriteID: 6047b173110fa414aa0b80898e3a87ee
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 54
+      width: 18
+      height: 18
+    spriteID: 0b9ece3624d660b49a2fc4055b966aa4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 54
+      width: 18
+      height: 18
+    spriteID: acbef376ce376f741a8b2e54d6830a77
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 162
+      y: 54
+      width: 18
+      height: 18
+    spriteID: 7d7d6e12dbb19b345bdbd6eeed4024d4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 36
+      width: 18
+      height: 18
+    spriteID: 67985a7b1f192e644af84c267f64b88f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 18
+      y: 36
+      width: 18
+      height: 18
+    spriteID: d0473cd550041c843b3c42e50c056212
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 36
+      width: 18
+      height: 18
+    spriteID: 2488dbb478fcc7b41ad18fbd630a8461
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 36
+      width: 18
+      height: 18
+    spriteID: 9d702709a884908469286196f11d38b3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 36
+      width: 18
+      height: 18
+    spriteID: 46a1a384d8fb9b544b595dd4f2894a9e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 90
+      y: 36
+      width: 18
+      height: 18
+    spriteID: 4d27cad2bfd7d244ba4337b49d5d238b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 108
+      y: 36
+      width: 18
+      height: 18
+    spriteID: 315b5aa527f382642830492751e27f6f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 36
+      width: 18
+      height: 18
+    spriteID: 2df6ebd90f3d6014f8a46f6762832e4c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 36
+      width: 18
+      height: 18
+    spriteID: cd68650e9651fb04a943848ed83625d9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 162
+      y: 36
+      width: 18
+      height: 18
+    spriteID: 329572fbe6a5845448fd4231964b7331
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 18
+      width: 18
+      height: 18
+    spriteID: d7345792685deb74588f6e2125047533
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 18
+      y: 18
+      width: 18
+      height: 18
+    spriteID: cf6451c4cb9a18e4ca6f6ef9adc2472d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 18
+      width: 18
+      height: 18
+    spriteID: 37d17c23d60a8734a8828d2375568276
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 18
+      width: 18
+      height: 18
+    spriteID: 6363251a440fe5c4897996af15aad4d7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 18
+      width: 18
+      height: 18
+    spriteID: db55d68499eaabe4da90252fc823380d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 90
+      y: 18
+      width: 18
+      height: 18
+    spriteID: 48e242e63dc527a4599561097a112b68
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 108
+      y: 18
+      width: 18
+      height: 18
+    spriteID: e4023e22ec6f0e74c9cba4616f062c9b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 18
+      width: 18
+      height: 18
+    spriteID: 383458053a4477648820b366bea2a59a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_38
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 18
+      width: 18
+      height: 18
+    spriteID: c4d64ccc4bcb3c547964e1132a844f36
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 162
+      y: 18
+      width: 18
+      height: 18
+    spriteID: d929d7bdd631fee46a9cd246a99e3f86
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_40
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 18
+      height: 18
+    spriteID: c14c5b7c17c641740b7062aa60263950
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_41
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 18
+      y: 0
+      width: 18
+      height: 18
+    spriteID: 791742f9035251d479b612541918bd7a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_42
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 0
+      width: 18
+      height: 18
+    spriteID: 16846568970bb7d44ad60d005074c0c6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_43
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 0
+      width: 18
+      height: 18
+    spriteID: 0caebe166bde4fe40a3e550f3cf9f75b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_44
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 0
+      width: 18
+      height: 18
+    spriteID: 9e699051bb62e96469eff43db4d997ba
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_45
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 90
+      y: 0
+      width: 18
+      height: 18
+    spriteID: aab04ed96b9143048a8699b08aae3f18
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_46
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 108
+      y: 0
+      width: 18
+      height: 18
+    spriteID: a2a1ae75252ab364796927dbcf14d3dd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_47
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 0
+      width: 18
+      height: 18
+    spriteID: 9d7d441df9d89e442b20277903622a30
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_48
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 0
+      width: 18
+      height: 18
+    spriteID: a3a0d8935f0c2ba45a89718035931eb5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dungeon_tileset_v1_49
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 162
+      y: 0
+      width: 18
+      height: 18
+    spriteID: 6d09f2f743067ee45a750db64640df77
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {instanceID: 0}
