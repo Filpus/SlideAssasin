@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour
 
 
 
-    [SerializeField] private int EnemyCounter = 10; //TODO Dodać SO inicjujący grę
+    [SerializeField] private int EnemyCounter = 3; //TODO Dodać SO inicjujący grę
+
+    public static event EventHandler LevelCleared;
     
     public static GameManager Instance;
     public static event EventHandler TurnHappened;
@@ -24,6 +26,10 @@ public class GameManager : MonoBehaviour
     public void EnemyDied()
     {
         EnemyCounter--;
+        if (EnemyCounter <= 0)
+        {
+            LevelCleared?.Invoke(this, EventArgs.Empty);
+        }
     }
 
 

@@ -126,6 +126,24 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ResetLevel"",
+                    ""type"": ""Button"",
+                    ""id"": ""aba93a91-3150-45c4-bee8-98a528276a72"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ExitMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""cfa7af95-7fe7-48c4-9c84-74c4c9b86a03"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -133,6 +151,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""b7cf7482-c008-4d2b-b322-440c387b5f29"",
                     ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8655e3dd-f272-4749-bdc4-c1e93fbf91a5"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -153,8 +182,30 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""643e6053-2af4-4a29-ba9a-546e2ab2c48d"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""f14f1ba5-d16d-4bc0-9b5f-f3f69199def5"",
                     ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba26ef6b-e1af-4bc2-ad7d-9792027cb7be"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -172,6 +223,39 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""MoveRigth"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c8d0f3a7-ca98-4b3c-b4ef-b5ffa80ce385"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveRigth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6fe6de72-9094-4b89-b9c2-7dd2036cb638"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResetLevel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f330aa89-cdfe-40f1-960d-1ef350bee189"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ExitMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -184,6 +268,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_MoveDown = m_Player.FindAction("MoveDown", throwIfNotFound: true);
         m_Player_MoveLeft = m_Player.FindAction("MoveLeft", throwIfNotFound: true);
         m_Player_MoveRigth = m_Player.FindAction("MoveRigth", throwIfNotFound: true);
+        m_Player_ResetLevel = m_Player.FindAction("ResetLevel", throwIfNotFound: true);
+        m_Player_ExitMenu = m_Player.FindAction("ExitMenu", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -268,6 +354,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MoveDown;
     private readonly InputAction m_Player_MoveLeft;
     private readonly InputAction m_Player_MoveRigth;
+    private readonly InputAction m_Player_ResetLevel;
+    private readonly InputAction m_Player_ExitMenu;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -295,6 +383,14 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/MoveRigth".
         /// </summary>
         public InputAction @MoveRigth => m_Wrapper.m_Player_MoveRigth;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ResetLevel".
+        /// </summary>
+        public InputAction @ResetLevel => m_Wrapper.m_Player_ResetLevel;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ExitMenu".
+        /// </summary>
+        public InputAction @ExitMenu => m_Wrapper.m_Player_ExitMenu;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -333,6 +429,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MoveRigth.started += instance.OnMoveRigth;
             @MoveRigth.performed += instance.OnMoveRigth;
             @MoveRigth.canceled += instance.OnMoveRigth;
+            @ResetLevel.started += instance.OnResetLevel;
+            @ResetLevel.performed += instance.OnResetLevel;
+            @ResetLevel.canceled += instance.OnResetLevel;
+            @ExitMenu.started += instance.OnExitMenu;
+            @ExitMenu.performed += instance.OnExitMenu;
+            @ExitMenu.canceled += instance.OnExitMenu;
         }
 
         /// <summary>
@@ -356,6 +458,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MoveRigth.started -= instance.OnMoveRigth;
             @MoveRigth.performed -= instance.OnMoveRigth;
             @MoveRigth.canceled -= instance.OnMoveRigth;
+            @ResetLevel.started -= instance.OnResetLevel;
+            @ResetLevel.performed -= instance.OnResetLevel;
+            @ResetLevel.canceled -= instance.OnResetLevel;
+            @ExitMenu.started -= instance.OnExitMenu;
+            @ExitMenu.performed -= instance.OnExitMenu;
+            @ExitMenu.canceled -= instance.OnExitMenu;
         }
 
         /// <summary>
@@ -424,5 +532,19 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMoveRigth(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ResetLevel" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnResetLevel(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ExitMenu" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnExitMenu(InputAction.CallbackContext context);
     }
 }
