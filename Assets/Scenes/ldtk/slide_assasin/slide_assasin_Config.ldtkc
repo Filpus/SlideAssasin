@@ -13,9 +13,20 @@
         {
             "_key": "Ground_1",
             "_asset": {
-                "instanceID": 0
+                "fileID": 11400000,
+                "guid": "d2962e56f9bc0884ca34318a92160890",
+                "type": 2
             }
         }
     ],
-    "Entities": []
+    "Entities": [
+        {
+            "_key": "Box",
+            "_asset": {
+                "fileID": 3734039064849070891,
+                "guid": "a423406cb27a7234eb418b0a89637104",
+                "type": 3
+            }
+        }
+    ]
 }
