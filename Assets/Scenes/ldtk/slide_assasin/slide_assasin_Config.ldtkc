@@ -27,6 +27,70 @@
                 "guid": "a423406cb27a7234eb418b0a89637104",
                 "type": 3
             }
+        },
+        {
+            "_key": "Shield_enemy",
+            "_asset": {
+                "fileID": 4544792668998629915,
+                "guid": "db5b7c6d891e9584f9ac15b060e757e9",
+                "type": 3
+            }
+        },
+        {
+            "_key": "Archer_enemy",
+            "_asset": {
+                "fileID": 2394857850580773350,
+                "guid": "9029353e6c002ce499827a23f8514e29",
+                "type": 3
+            }
+        },
+        {
+            "_key": "Armour_enemy",
+            "_asset": {
+                "fileID": 2394857850580773350,
+                "guid": "9c6398359b9903442a974c8dff2726a3",
+                "type": 3
+            }
+        },
+        {
+            "_key": "Spear_enemy",
+            "_asset": {
+                "fileID": 4544792668998629915,
+                "guid": "14076fb65dc37e34ea0a3a38c809d456",
+                "type": 3
+            }
+        },
+        {
+            "_key": "Sword_enemy",
+            "_asset": {
+                "fileID": 2394857850580773350,
+                "guid": "cc3687e99accdc74ba7e6fbd8fab6576",
+                "type": 3
+            }
+        },
+        {
+            "_key": "Doors",
+            "_asset": {
+                "fileID": 3769576614698343972,
+                "guid": "0aaaf77e423cb9a4ba09932aa6c74a60",
+                "type": 3
+            }
+        },
+        {
+            "_key": "Pilar",
+            "_asset": {
+                "fileID": 5087657283798466464,
+                "guid": "b4670a207e5d4c64d90dd64121c461f7",
+                "type": 3
+            }
+        },
+        {
+            "_key": "Crate",
+            "_asset": {
+                "fileID": 5571706896898075672,
+                "guid": "e4243079d6ea0db4bacf447655db08e2",
+                "type": 3
+            }
         }
     ]
 }
