@@ -1,7 +1,8 @@
+using LDtkUnity;
 using System;
 using UnityEngine;
 
-public class LvlExit : MonoBehaviour
+public class LvlExit : MonoBehaviour, ILDtkImportedEntity
 {
 
     [SerializeField] private LvlExitVisual lvlExitVisual;
@@ -10,6 +11,11 @@ public class LvlExit : MonoBehaviour
     void Start()
     {
         GameManager.LevelCleared += GameManagerOnLevelCleared;
+    }
+
+    public void OnLDtkImportEntity(EntityInstance entity)
+    {
+
     }
 
     private void GameManagerOnLevelCleared(object sender, EventArgs e)

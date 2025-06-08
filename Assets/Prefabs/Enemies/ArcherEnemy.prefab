@@ -167,7 +167,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11da3907b3bddea4bbc951f01ce48569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAnimator: {fileID: 5989608075063105723}
   frontDirection: 1
+  ArrowPrefab: {fileID: 0}
+--- !u!114 &5989608075063105723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1076070052492599926, guid: a536cf73a32a5114382e9315f4916b1d, type: 3}
+  m_PrefabInstance: {fileID: 6769372918136928973}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfce84991cf1d42458b88da27c64c4ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7510095640202396629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3875520087222532376, guid: a536cf73a32a5114382e9315f4916b1d, type: 3}

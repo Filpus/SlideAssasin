@@ -5,8 +5,9 @@ public class ArcherEnemy : BaseEnemy
 {
 
     [SerializeField] private Transform ArrowPrefab;
-    protected void Start()
+    protected override void Start()
     {
+        base.Start();
         GameManager.TurnHappened += GameManagerOnTurnHappened;
     }
 
@@ -21,5 +22,5 @@ public class ArcherEnemy : BaseEnemy
         
     }
 
-    public virtual void Interact(Player player){}
+    public override void Interact(Player player){}
 }
