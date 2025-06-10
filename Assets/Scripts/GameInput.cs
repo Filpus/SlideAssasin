@@ -12,8 +12,9 @@ public class GameInput : MonoBehaviour
     public event EventHandler OnMoveDown;
     public event EventHandler OnMoveLeft;
     public event EventHandler OnMoveRight;
-    
 
+    public event EventHandler OnReset;
+    public event EventHandler OnPause;
     
 
     private void Awake()
@@ -25,7 +26,19 @@ public class GameInput : MonoBehaviour
         playerInput.Player.MoveUp.performed += MoveUpOnPerformed;  
         playerInput.Player.MoveDown.performed += MoveDownOnPerformed;
         playerInput.Player.MoveLeft.performed += MoveLeftOnPerformed;
-        playerInput.Player.MoveRigth.performed += MoveRigthOnPerformed;   
+        playerInput.Player.MoveRigth.performed += MoveRigthOnPerformed;
+        playerInput.Player.ResetLevel.performed += ResetLevelOnperformed;
+        playerInput.Player.ExitMenu.performed += ExitMenuOnperformed;
+    }
+
+    private void ExitMenuOnperformed(InputAction.CallbackContext obj)
+    {
+        OnPause?.Invoke(this,EventArgs.Empty);
+    }
+
+    private void ResetLevelOnperformed(InputAction.CallbackContext obj)
+    {
+        OnReset?.Invoke(this, EventArgs.Empty);
     }
 
     private void MoveRigthOnPerformed(InputAction.CallbackContext obj)

@@ -13,6 +13,7 @@ public class SpearEnemy : BaseEnemy
         else
         {
             enemyAnimator.PlayEnemyDie();
+            GameManager.Instance.EnemyDied();
             Destroy(gameObject);
         }
     }

@@ -7,5 +7,7 @@ public class LevelSO : ScriptableObject
 {
     public int Number;
     public string Name;
-    public Scene? LevelScene;
+    public int EnemyNumber;
+    public string NextLevelName;
+
 }

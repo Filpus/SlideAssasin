@@ -19,7 +19,8 @@ public class LevelButton : MonoBehaviour
 
     private void Call()
     {
-        SceneManager.LoadScene(LevelInfo.LevelScene.ToString());
+        print(LevelInfo);
+        SceneManager.LoadScene(LevelInfo.Name);
 
     }
 
