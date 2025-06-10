@@ -25,6 +25,7 @@ public class ArmourEnemy : BaseEnemy
             case ArmourState.Fragile:
                 Destroy(gameObject);
                 enemyAnimator.PlayEnemyDie();
+                GameManager.Instance.EnemyDied();
                 break;
         }
     }

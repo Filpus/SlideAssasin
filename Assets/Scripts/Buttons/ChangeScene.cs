@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ChangeScene : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private Button button;
+    [SerializeField] private string SceneName;
     void Start()
     {
-        
+        button.onClick.AddListener(Call);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Call()
     {
-        
+        SceneManager.LoadScene(SceneName);
+
     }
 }

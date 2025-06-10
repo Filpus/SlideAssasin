@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     
     public MovementStates playerMovementState;
 
-    public static  event EventHandler PlayerMoved;
+    public  event EventHandler PlayerMoved;
 
     private float playerSize = 1f;
     
@@ -63,6 +63,7 @@ public class Player : MonoBehaviour
 
     private void HandleMovement()
     {
+
         Vector2 moveDir = Vector2.zero;
         float moveDistance = moveSpeed * Time.deltaTime;
         switch (playerMovementState)
@@ -150,7 +151,7 @@ public class Player : MonoBehaviour
     }
     private void InstanceOnOnMoveUp(object sender, EventArgs e)
     {
-        if (playerMovementState == MovementStates.Standing)
+        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused)
         {
             playerMovementState = MovementStates.MovingUp;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
@@ -160,7 +161,7 @@ public class Player : MonoBehaviour
 
     private void InstanceOnOnMoveDown(object sender, EventArgs e)
     {
-        if (playerMovementState == MovementStates.Standing)
+        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused)
         {
             playerMovementState = MovementStates.MovingDown;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
@@ -170,7 +171,7 @@ public class Player : MonoBehaviour
 
     private void InstanceOnOnMoveLeft(object sender, EventArgs e)
     {
-        if (playerMovementState == MovementStates.Standing)
+        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused)
         {
             playerMovementState = MovementStates.MovingLeft;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
@@ -180,13 +181,14 @@ public class Player : MonoBehaviour
 
     private void InstanceOnOnMoveRight(object sender, EventArgs e)
     {
-        if (playerMovementState == MovementStates.Standing)
+        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused)
         {
             playerMovementState = MovementStates.MovingRight;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
             playerAnimator.PlayRunRight();
         }
     }
+
     
 
 }

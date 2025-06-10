@@ -8,7 +8,7 @@ public class ArcherEnemy : BaseEnemy
     protected override void Start()
     {
         base.Start();
-        GameManager.TurnHappened += GameManagerOnTurnHappened;
+        GameManager.Instance.TurnHappened += GameManagerOnTurnHappened;
     }
 
     private void GameManagerOnTurnHappened(object sender, EventArgs e)

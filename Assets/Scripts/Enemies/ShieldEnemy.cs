@@ -9,6 +9,7 @@ public class ShieldEnemy : BaseEnemy
         {
             
             enemyAnimator.PlayEnemyDie();
+            GameManager.Instance.EnemyDied();
             Destroy(gameObject);
         }
     }
