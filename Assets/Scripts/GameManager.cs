@@ -29,9 +29,16 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Player.Instance.PlayerMoved += PlayerOnPlayerMoved;
+        Player.Instance.PlayerDie += InstanceOnPlayerDie;
         GameInput.Instance.OnPause += InstanceOnOnPause;
         GameInput.Instance.OnReset += InstanceOnOnReset;
         levelExit.OnEndLevel += LevelExitOnOnEndLevel;
+        
+    }
+
+    private void InstanceOnPlayerDie(object sender, EventArgs e)
+    {
+        IsPaused = true;
     }
 
     private void LevelExitOnOnEndLevel(object sender, EventArgs e)

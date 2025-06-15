@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class Player : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
     public MovementStates playerMovementState;
 
     public  event EventHandler PlayerMoved;
+    public event EventHandler PlayerDie;
 
     private float playerSize = 1f;
     
@@ -148,10 +150,11 @@ public class Player : MonoBehaviour
     {
         playerAnimator.PlayDie();
         playerMovementState = MovementStates.Dead;
+        PlayerDie?.Invoke(this, EventArgs.Empty);
     }
     private void InstanceOnOnMoveUp(object sender, EventArgs e)
     {
-        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused)
+        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused & (playerMovementState != MovementStates.Dead))
         {
             playerMovementState = MovementStates.MovingUp;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
@@ -161,7 +164,7 @@ public class Player : MonoBehaviour
 
     private void InstanceOnOnMoveDown(object sender, EventArgs e)
     {
-        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused)
+        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused & (playerMovementState != MovementStates.Dead))
         {
             playerMovementState = MovementStates.MovingDown;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
@@ -171,7 +174,7 @@ public class Player : MonoBehaviour
 
     private void InstanceOnOnMoveLeft(object sender, EventArgs e)
     {
-        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused)
+        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused & (playerMovementState != MovementStates.Dead))
         {
             playerMovementState = MovementStates.MovingLeft;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
@@ -181,7 +184,7 @@ public class Player : MonoBehaviour
 
     private void InstanceOnOnMoveRight(object sender, EventArgs e)
     {
-        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused)
+        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused & (playerMovementState != MovementStates.Dead))
         {
             playerMovementState = MovementStates.MovingRight;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
