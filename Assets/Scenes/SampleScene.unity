@@ -573,7 +573,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1069446167660526322, guid: cc3687e99accdc74ba7e6fbd8fab6576, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -850,6 +851,10 @@ PrefabInstance:
       propertyPath: frontDirection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1223019507934865679, guid: 14076fb65dc37e34ea0a3a38c809d456, type: 3}
+      propertyPath: frontDirection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4544792668998629915, guid: 14076fb65dc37e34ea0a3a38c809d456, type: 3}
       propertyPath: m_Name
       value: SpearEnemy
@@ -1047,7 +1052,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563005027}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
