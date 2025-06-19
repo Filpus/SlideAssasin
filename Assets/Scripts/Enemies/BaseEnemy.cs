@@ -1,8 +1,9 @@
 using System;
 using UnityEngine;
 using LDtkUnity;
+using Utils;
 
-public class BaseEnemy : MonoBehaviour, ILDtkImportedEntity
+public class BaseEnemy : MonoBehaviour, ILDtkImportedEntity, IInteractable
 {
 
     public enum Direction
