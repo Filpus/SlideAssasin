@@ -24,9 +24,11 @@ public class LvlExit : MonoBehaviour, ILDtkImportedEntity
         IsAvtive = true;
         lvlExitVisual.ShowActive();
     }
+    
+    
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         print("test");
         if (IsAvtive)

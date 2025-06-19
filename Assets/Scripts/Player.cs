@@ -2,6 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Video;
+using Utils;
 
 public class Player : MonoBehaviour
 {
@@ -134,10 +135,10 @@ public class Player : MonoBehaviour
 
         if (hit.collider != null)
         {
-            BaseEnemy enemy = hit.collider.GetComponent<BaseEnemy>();
-            if (enemy != null)
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+            if (interactable != null)
             {
-                enemy.Interact(this);
+                interactable.Interact(this);
                 return true;
             }
         }
