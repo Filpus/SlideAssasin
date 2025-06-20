@@ -115,6 +115,12 @@
             "_asset": {
                 "instanceID": 0
             }
+        },
+        {
+            "_key": "DangerZone",
+            "_asset": {
+                "instanceID": 0
+            }
         }
     ]
 }

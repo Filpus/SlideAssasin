@@ -42,7 +42,7 @@
 		"command": "../../../Library/LDtkTilesetExporter/ExportTilesetDefinition.exe \"slide_assasin\"",
 		"when": "AfterSave"
 	}],
-	"flags": [],
+	"flags": ["IgnoreBackupSuggest"],
 	"defs": { "layers": [
 		{
 			"__type": "Entities",
@@ -1607,7 +1607,7 @@
 			"limitScope": "PerLevel",
 			"limitBehavior": "MoveLastOne",
 			"pivotX": 0.5,
-			"pivotY": 0.5,
+			"pivotY": 1,
 			"fieldDefs": []
 		},
 		{
