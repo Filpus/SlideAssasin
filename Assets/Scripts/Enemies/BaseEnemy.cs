@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 using LDtkUnity;
 using Utils;
+using Enemies;
+using JetBrains.Annotations;
 
 public class BaseEnemy : MonoBehaviour, ILDtkImportedEntity, IInteractable
 {
@@ -17,6 +19,7 @@ public class BaseEnemy : MonoBehaviour, ILDtkImportedEntity, IInteractable
     [SerializeField] protected EnemyAnimator enemyAnimator;
 
     [SerializeField] protected Direction frontDirection=Direction.Up;
+    [SerializeField] [CanBeNull] protected BaseSound enemySound;
 
     public void OnLDtkImportEntity(EntityInstance entity)
     {
@@ -56,7 +59,10 @@ public class BaseEnemy : MonoBehaviour, ILDtkImportedEntity, IInteractable
     }
 
 
-    public virtual void Interact(Player player){}
+    public virtual bool Interact(Player player)
+    {
+        return true;
+    }
     private void AdjustPosition()
     {
         Vector3 position = transform.position;

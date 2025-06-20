@@ -129,18 +129,18 @@
 				{
 					"__identifier": "Doors",
 					"__grid": [6,1],
-					"__pivot": [0.5,0.5],
+					"__pivot": [0.5,1],
 					"__tags": ["level_manage"],
 					"__tile": null,
 					"__smartColor": "#733E39",
-					"iid": "dd1f67c0-3740-11f0-b3db-7f4ed6d7c9e1",
+					"iid": "16c7c2d0-3740-11f0-9263-f55af12c862f",
 					"width": 18,
 					"height": 18,
 					"defUid": 46,
-					"px": [117,27],
+					"px": [117,36],
 					"fieldInstances": [],
 					"__worldX": 293,
-					"__worldY": 27
+					"__worldY": 36
 				}
 			]
 		},

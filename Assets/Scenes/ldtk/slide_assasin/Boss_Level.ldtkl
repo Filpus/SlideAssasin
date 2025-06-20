@@ -285,6 +285,22 @@
 					"fieldInstances": [],
 					"__worldX": 801,
 					"__worldY": 54
+				},
+				{
+					"__identifier": "Doors",
+					"__grid": [5,3],
+					"__pivot": [0.5,1],
+					"__tags": ["level_manage"],
+					"__tile": null,
+					"__smartColor": "#733E39",
+					"iid": "38dff0e0-3740-11f0-9263-fb5655eaeec8",
+					"width": 18,
+					"height": 18,
+					"defUid": 46,
+					"px": [99,72],
+					"fieldInstances": [],
+					"__worldX": 801,
+					"__worldY": 72
 				}
 			]
 		},

@@ -50,7 +50,7 @@ ScriptedImporter:
   - _key: Entrance
     _asset: {instanceID: 0}
   - _key: DangerZone
-    _asset: {fileID: 8930070513511842851, guid: 6f53c5e3ca53bc144a3c0b665f669d76, type: 3}
+    _asset: {instanceID: 0}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 

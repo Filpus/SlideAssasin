@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d685debabfdd4883924edf518db5e932, type: 3}
+  m_Name: KillSounds
+  m_EditorClassIdentifier: 
+  AudioClips:
+  - {fileID: 8300000, guid: b684b910cef5f0f4a997f38bc250b8f2, type: 3}
+  - {fileID: 8300000, guid: 13cd788dcd500954ca9454204d6623f7, type: 3}
+  - {fileID: 8300000, guid: 74aea881e77f0b645aff3ea2fb6ba490, type: 3}
+  - {fileID: 8300000, guid: 99d9bad5e1d29b841991490377fe7548, type: 3}
+  - {fileID: 8300000, guid: 8b44625d4ebccf74ba019be952c87aad, type: 3}
+  - {fileID: 8300000, guid: 9c0735bcfefd4494fac994bb3345c59a, type: 3}
