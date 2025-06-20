@@ -51,7 +51,24 @@
 			"seed": 1939902,
 			"overrideTilesetUid": null,
 			"gridTiles": [],
-			"entityInstances": []
+			"entityInstances": [
+				{
+					"__identifier": "Player",
+					"__grid": [1,12],
+					"__pivot": [0.5,0.5],
+					"__tags": ["player"],
+					"__tile": null,
+					"__smartColor": "#63C74D",
+					"iid": "68d7ea90-3740-11f0-9329-6fef8be628be",
+					"width": 18,
+					"height": 18,
+					"defUid": 51,
+					"px": [27,225],
+					"fieldInstances": [],
+					"__worldX": 411,
+					"__worldY": 657
+				}
+			]
 		},
 		{
 			"__identifier": "Entities",
@@ -77,22 +94,6 @@
 			"overrideTilesetUid": null,
 			"gridTiles": [],
 			"entityInstances": [
-				{
-					"__identifier": "Player",
-					"__grid": [1,12],
-					"__pivot": [0.5,1],
-					"__tags": ["player"],
-					"__tile": null,
-					"__smartColor": "#63C74D",
-					"iid": "68d7ea90-3740-11f0-9329-6fef8be628be",
-					"width": 18,
-					"height": 18,
-					"defUid": 51,
-					"px": [27,234],
-					"fieldInstances": [],
-					"__worldX": 411,
-					"__worldY": 666
-				},
 				{
 					"__identifier": "Shield_enemy",
 					"__grid": [4,12],

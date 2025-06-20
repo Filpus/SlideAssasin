@@ -87,7 +87,9 @@
         {
             "_key": "Player",
             "_asset": {
-                "instanceID": 0
+                "fileID": 2926173975639912906,
+                "guid": "e94aea3bba19ff943818cac5b6ac4e89",
+                "type": 3
             }
         },
         {
@@ -99,7 +101,9 @@
         {
             "_key": "Boss",
             "_asset": {
-                "instanceID": 0
+                "fileID": 3142915896783910480,
+                "guid": "ff776588ab976f646963f6bb22aea850",
+                "type": 3
             }
         },
         {
