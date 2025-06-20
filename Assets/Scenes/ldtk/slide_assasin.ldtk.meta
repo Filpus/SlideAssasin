@@ -40,7 +40,7 @@ ScriptedImporter:
   - _key: Crate
     _asset: {fileID: 5571706896898075672, guid: e4243079d6ea0db4bacf447655db08e2, type: 3}
   - _key: Player
-    _asset: {instanceID: 0}
+    _asset: {fileID: 2926173975639912906, guid: e94aea3bba19ff943818cac5b6ac4e89, type: 3}
   - _key: Balcony
     _asset: {instanceID: 0}
   - _key: Boss
@@ -49,6 +49,8 @@ ScriptedImporter:
     _asset: {fileID: 5087657283798466464, guid: b4670a207e5d4c64d90dd64121c461f7, type: 3}
   - _key: Entrance
     _asset: {instanceID: 0}
+  - _key: DangerZone
+    _asset: {fileID: 8930070513511842851, guid: 6f53c5e3ca53bc144a3c0b665f669d76, type: 3}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 

@@ -125,7 +125,12 @@ public class Player : MonoBehaviour
     private void AdjustPosition()
     {
         Vector3 position = transform.position;
-        transform.position = new Vector3(Mathf.Round(position.x), Mathf.Round(position.y), 0);
+        transform.position = new Vector3(RoundToNearestHalf(position.x), RoundToNearestHalf(position.y), 0);
+    }
+
+    float RoundToNearestHalf(double value)
+    {
+        return (float)Math.Round(value * 2, MidpointRounding.AwayFromZero) / 2;
     }
 
     private bool TryToInteract(Vector2 moveDir)
