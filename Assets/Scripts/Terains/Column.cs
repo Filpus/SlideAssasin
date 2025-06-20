@@ -18,7 +18,7 @@ public class Column : MonoBehaviour, ILDtkImportedEntity, IInteractable
 
 
 
-    public void Interact(Player player)
+    public bool Interact(Player player)
     {
 
         if (_hitNumber < 3)
@@ -30,6 +30,7 @@ public class Column : MonoBehaviour, ILDtkImportedEntity, IInteractable
                 ColumnDestroyed?.Invoke(this,EventArgs.Empty);
             }
         }
-        
+
+        return true;
     }
 }
