@@ -94,22 +94,6 @@
 					"__worldY": 271
 				},
 				{
-					"__identifier": "Doors",
-					"__grid": [1,2],
-					"__pivot": [0.5,0.5],
-					"__tags": ["level_manage"],
-					"__tile": null,
-					"__smartColor": "#733E39",
-					"iid": "40d15e00-3740-11f0-9518-4d7662f596b7",
-					"width": 18,
-					"height": 18,
-					"defUid": 46,
-					"px": [27,45],
-					"fieldInstances": [],
-					"__worldX": 275,
-					"__worldY": 289
-				},
-				{
 					"__identifier": "Archer_enemy",
 					"__grid": [3,4],
 					"__pivot": [0.5,0.5],
@@ -172,6 +156,22 @@
 					"fieldInstances": [{ "__identifier": "Side", "__type": "Int", "__value": 2, "__tile": null, "defUid": 34, "realEditorValues": [{ "id": "V_Int", "params": [2] }] }],
 					"__worldX": 347,
 					"__worldY": 325
+				},
+				{
+					"__identifier": "Doors",
+					"__grid": [1,2],
+					"__pivot": [0.5,1],
+					"__tags": ["level_manage"],
+					"__tile": null,
+					"__smartColor": "#733E39",
+					"iid": "2b200b20-3740-11f0-9263-590333254b0c",
+					"width": 18,
+					"height": 18,
+					"defUid": 46,
+					"px": [27,54],
+					"fieldInstances": [],
+					"__worldX": 275,
+					"__worldY": 298
 				}
 			]
 		},
