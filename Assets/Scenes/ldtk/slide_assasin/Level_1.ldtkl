@@ -51,7 +51,24 @@
 			"seed": 7458375,
 			"overrideTilesetUid": null,
 			"gridTiles": [],
-			"entityInstances": []
+			"entityInstances": [
+				{
+					"__identifier": "Player",
+					"__grid": [1,1],
+					"__pivot": [0.5,0.5],
+					"__tags": ["player"],
+					"__tile": null,
+					"__smartColor": "#63C74D",
+					"iid": "a1aa4e30-3740-11f0-b3db-bfbad32ac046",
+					"width": 18,
+					"height": 18,
+					"defUid": 51,
+					"px": [27,27],
+					"fieldInstances": [],
+					"__worldX": 203,
+					"__worldY": 27
+				}
+			]
 		},
 		{
 			"__identifier": "Entities",
@@ -77,22 +94,6 @@
 			"overrideTilesetUid": null,
 			"gridTiles": [],
 			"entityInstances": [
-				{
-					"__identifier": "Player",
-					"__grid": [1,1],
-					"__pivot": [0.5,1],
-					"__tags": ["player"],
-					"__tile": null,
-					"__smartColor": "#63C74D",
-					"iid": "a1aa4e30-3740-11f0-b3db-bfbad32ac046",
-					"width": 18,
-					"height": 18,
-					"defUid": 51,
-					"px": [27,36],
-					"fieldInstances": [],
-					"__worldX": 203,
-					"__worldY": 36
-				},
 				{
 					"__identifier": "Sword_enemy",
 					"__grid": [1,7],
