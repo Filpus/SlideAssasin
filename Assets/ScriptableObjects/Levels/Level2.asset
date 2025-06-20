@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Number: 2
   Name: Level2
-  EnemyNumber: 0
+  EnemyNumber: 4
   NextLevelName: Level3
