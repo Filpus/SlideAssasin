@@ -1,4 +1,5 @@
 using System;
+using DefaultNamespace;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Video;
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
 
 
     [SerializeField] private PlayerAnimator playerAnimator;
+    [SerializeField] private PlayerAudio playerAudio;
     
     public MovementStates playerMovementState;
 
@@ -138,7 +140,10 @@ public class Player : MonoBehaviour
             IInteractable interactable = hit.collider.GetComponent<IInteractable>();
             if (interactable != null)
             {
-                interactable.Interact(this);
+                if (interactable.Interact(this))
+                {
+                    playerAudio.PlayAttack();
+                };
                 return true;
             }
         }
@@ -160,6 +165,8 @@ public class Player : MonoBehaviour
             playerMovementState = MovementStates.MovingUp;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
             playerAnimator.PlayRunUp();
+            playerAudio.PlayDash();
+
         }
     }
 
@@ -170,6 +177,8 @@ public class Player : MonoBehaviour
             playerMovementState = MovementStates.MovingDown;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
             playerAnimator.PlayRunDown();
+            playerAudio.PlayDash();
+
         }    
     }
 
@@ -180,6 +189,8 @@ public class Player : MonoBehaviour
             playerMovementState = MovementStates.MovingLeft;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
             playerAnimator.PlayRunLeft();
+            playerAudio.PlayDash();
+
         }
     }
 
@@ -190,8 +201,12 @@ public class Player : MonoBehaviour
             playerMovementState = MovementStates.MovingRight;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
             playerAnimator.PlayRunRight();
+            playerAudio.PlayDash();
+
         }
     }
+
+
 
     
 
