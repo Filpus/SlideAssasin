@@ -5,7 +5,7 @@ using UnityEngine;
 public class LvlExit : MonoBehaviour, ILDtkImportedEntity
 {
 
-    [SerializeField] private LvlExitVisual lvlExitVisual;
+    //[SerializeField] private LvlExitVisual lvlExitVisual;
 
     public event EventHandler OnEndLevel;
     public bool IsAvtive = false;
@@ -22,11 +22,13 @@ public class LvlExit : MonoBehaviour, ILDtkImportedEntity
     private void GameManagerOnLevelCleared(object sender, EventArgs e)
     {
         IsAvtive = true;
-        lvlExitVisual.ShowActive();
+      //  lvlExitVisual.ShowActive();
     }
+    
+    
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         print("test");
         if (IsAvtive)

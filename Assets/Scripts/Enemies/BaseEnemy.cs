@@ -1,8 +1,11 @@
 using System;
 using UnityEngine;
 using LDtkUnity;
+using Utils;
+using Enemies;
+using JetBrains.Annotations;
 
-public class BaseEnemy : MonoBehaviour, ILDtkImportedEntity
+public class BaseEnemy : MonoBehaviour, ILDtkImportedEntity, IInteractable
 {
 
     public enum Direction
@@ -16,6 +19,7 @@ public class BaseEnemy : MonoBehaviour, ILDtkImportedEntity
     [SerializeField] protected EnemyAnimator enemyAnimator;
 
     [SerializeField] protected Direction frontDirection=Direction.Up;
+    [SerializeField] [CanBeNull] protected BaseSound enemySound;
 
     public void OnLDtkImportEntity(EntityInstance entity)
     {
@@ -55,10 +59,18 @@ public class BaseEnemy : MonoBehaviour, ILDtkImportedEntity
     }
 
 
-    public virtual void Interact(Player player){}
+    public virtual bool Interact(Player player)
+    {
+        return true;
+    }
     private void AdjustPosition()
     {
         Vector3 position = transform.position;
-        transform.position = new Vector3(Mathf.Round(position.x), Mathf.Round(position.y), 0);
+        transform.position = new Vector3(RoundToNearestHalf(position.x), RoundToNearestHalf(position.y), 0);
+    }
+
+    float RoundToNearestHalf(double value)
+    {
+        return (float)Math.Round(value * 2, MidpointRounding.AwayFromZero) / 2;
     }
 }

@@ -51,7 +51,24 @@
 			"seed": 2543699,
 			"overrideTilesetUid": null,
 			"gridTiles": [],
-			"entityInstances": []
+			"entityInstances": [
+				{
+					"__identifier": "Player",
+					"__grid": [10,1],
+					"__pivot": [0.5,0.5],
+					"__tags": ["player"],
+					"__tile": null,
+					"__smartColor": "#63C74D",
+					"iid": "c2748300-3740-11f0-9518-93c6eca068ca",
+					"width": 18,
+					"height": 18,
+					"defUid": 51,
+					"px": [189,27],
+					"fieldInstances": [],
+					"__worldX": 205,
+					"__worldY": 443
+				}
+			]
 		},
 		{
 			"__identifier": "Entities",
@@ -77,22 +94,6 @@
 			"overrideTilesetUid": null,
 			"gridTiles": [],
 			"entityInstances": [
-				{
-					"__identifier": "Doors",
-					"__grid": [5,2],
-					"__pivot": [0.5,0.5],
-					"__tags": ["level_manage"],
-					"__tile": null,
-					"__smartColor": "#733E39",
-					"iid": "a39c64c0-3740-11f0-9518-7535d2a1614a",
-					"width": 18,
-					"height": 18,
-					"defUid": 46,
-					"px": [99,45],
-					"fieldInstances": [],
-					"__worldX": 115,
-					"__worldY": 461
-				},
 				{
 					"__identifier": "Armour_enemy",
 					"__grid": [6,1],
@@ -142,22 +143,6 @@
 					"__worldY": 569
 				},
 				{
-					"__identifier": "Player",
-					"__grid": [10,1],
-					"__pivot": [0.5,1],
-					"__tags": ["player"],
-					"__tile": null,
-					"__smartColor": "#63C74D",
-					"iid": "c2748300-3740-11f0-9518-93c6eca068ca",
-					"width": 18,
-					"height": 18,
-					"defUid": 51,
-					"px": [189,36],
-					"fieldInstances": [],
-					"__worldX": 205,
-					"__worldY": 452
-				},
-				{
 					"__identifier": "Sword_enemy",
 					"__grid": [7,6],
 					"__pivot": [0.5,0.5],
@@ -204,6 +189,22 @@
 					"fieldInstances": [{ "__identifier": "Side", "__type": "Int", "__value": -1, "__tile": null, "defUid": 36, "realEditorValues": [{ "id": "V_Int", "params": [-1] }] }],
 					"__worldX": 43,
 					"__worldY": 497
+				},
+				{
+					"__identifier": "Doors",
+					"__grid": [5,2],
+					"__pivot": [0.5,1],
+					"__tags": ["level_manage"],
+					"__tile": null,
+					"__smartColor": "#733E39",
+					"iid": "314168f0-3740-11f0-9263-9bfb961ecbc8",
+					"width": 18,
+					"height": 18,
+					"defUid": 46,
+					"px": [99,54],
+					"fieldInstances": [],
+					"__worldX": 115,
+					"__worldY": 470
 				}
 			]
 		},

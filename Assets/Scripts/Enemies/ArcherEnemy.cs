@@ -22,5 +22,8 @@ public class ArcherEnemy : BaseEnemy
         
     }
 
-    public override void Interact(Player player){}
+    public override bool Interact(Player player)
+    {
+        return true;
+    }
 }

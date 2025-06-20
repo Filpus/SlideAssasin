@@ -1,7 +1,9 @@
 using System;
+using DefaultNamespace;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Video;
+using Utils;
 
 public class Player : MonoBehaviour
 {
@@ -27,6 +29,7 @@ public class Player : MonoBehaviour
 
 
     [SerializeField] private PlayerAnimator playerAnimator;
+    [SerializeField] private PlayerAudio playerAudio;
     
     public MovementStates playerMovementState;
 
@@ -124,7 +127,12 @@ public class Player : MonoBehaviour
     private void AdjustPosition()
     {
         Vector3 position = transform.position;
-        transform.position = new Vector3(Mathf.Round(position.x), Mathf.Round(position.y), 0);
+        transform.position = new Vector3(RoundToNearestHalf(position.x), RoundToNearestHalf(position.y), 0);
+    }
+
+    float RoundToNearestHalf(double value)
+    {
+        return (float)Math.Round(value * 2, MidpointRounding.AwayFromZero) / 2;
     }
 
     private bool TryToInteract(Vector2 moveDir)
@@ -134,10 +142,13 @@ public class Player : MonoBehaviour
 
         if (hit.collider != null)
         {
-            BaseEnemy enemy = hit.collider.GetComponent<BaseEnemy>();
-            if (enemy != null)
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+            if (interactable != null)
             {
-                enemy.Interact(this);
+                if (interactable.Interact(this))
+                {
+                    playerAudio.PlayAttack();
+                };
                 return true;
             }
         }
@@ -159,6 +170,8 @@ public class Player : MonoBehaviour
             playerMovementState = MovementStates.MovingUp;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
             playerAnimator.PlayRunUp();
+            playerAudio.PlayDash();
+
         }
     }
 
@@ -169,6 +182,8 @@ public class Player : MonoBehaviour
             playerMovementState = MovementStates.MovingDown;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
             playerAnimator.PlayRunDown();
+            playerAudio.PlayDash();
+
         }    
     }
 
@@ -179,6 +194,8 @@ public class Player : MonoBehaviour
             playerMovementState = MovementStates.MovingLeft;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
             playerAnimator.PlayRunLeft();
+            playerAudio.PlayDash();
+
         }
     }
 
@@ -189,8 +206,12 @@ public class Player : MonoBehaviour
             playerMovementState = MovementStates.MovingRight;
             PlayerMoved?.Invoke(this, EventArgs.Empty);
             playerAnimator.PlayRunRight();
+            playerAudio.PlayDash();
+
         }
     }
+
+
 
     
 
