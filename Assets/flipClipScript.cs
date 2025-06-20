@@ -3,7 +3,7 @@ using UnityEngine;
 public class flipClipScript : StateMachineBehaviour
 {
     public bool flipX = true;
-
+    public bool flipY = false;
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // Zakładamy, że Animator jest na tym samym GameObject co SpriteRenderer
@@ -11,12 +11,14 @@ public class flipClipScript : StateMachineBehaviour
         if (spriteRenderer != null)
         {
             spriteRenderer.flipX = flipX;
+            spriteRenderer.flipY = flipY;
         }
         else
         {
             // Alternatywnie: odbij cały obiekt przez skalę, jeśli nie używasz flipX
             Vector3 scale = animator.transform.localScale;
             scale.x = flipX ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
+            scale.y = flipY ? -Mathf.Abs(scale.y) : Mathf.Abs(scale.y);
             animator.transform.localScale = scale;
         }
     }

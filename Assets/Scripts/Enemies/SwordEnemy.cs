@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class SwordEnemy : BaseEnemy
 {
-    public override void Interact(Player player)
+    public override bool Interact(Player player)
     {
         GameManager.Instance.EnemyDied();
         Destroy(gameObject);
+        return true;
     }
 }
