@@ -42,7 +42,7 @@
 		"command": "../../../Library/LDtkTilesetExporter/ExportTilesetDefinition.exe \"slide_assasin\"",
 		"when": "AfterSave"
 	}],
-	"flags": [],
+	"flags": ["IgnoreBackupSuggest"],
 	"defs": { "layers": [
 		{
 			"__type": "Entities",
