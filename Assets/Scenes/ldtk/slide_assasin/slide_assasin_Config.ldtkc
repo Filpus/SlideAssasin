@@ -101,7 +101,9 @@
         {
             "_key": "Boss",
             "_asset": {
-                "instanceID": 0
+                "fileID": 3142915896783910480,
+                "guid": "ff776588ab976f646963f6bb22aea850",
+                "type": 3
             }
         },
         {

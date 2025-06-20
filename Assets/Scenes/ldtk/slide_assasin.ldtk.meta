@@ -44,7 +44,7 @@ ScriptedImporter:
   - _key: Balcony
     _asset: {instanceID: 0}
   - _key: Boss
-    _asset: {instanceID: 0}
+    _asset: {fileID: 3142915896783910480, guid: ff776588ab976f646963f6bb22aea850, type: 3}
   - _key: Pilar
     _asset: {fileID: 5087657283798466464, guid: b4670a207e5d4c64d90dd64121c461f7, type: 3}
   - _key: Entrance
