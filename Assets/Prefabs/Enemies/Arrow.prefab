@@ -93,6 +93,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  obstaclesLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  _arrowAnimator: {fileID: 666047560637053926}
   ArrowDirection: 1
 --- !u!1001 &4642910231442793554
 PrefabInstance:

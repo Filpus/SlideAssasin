@@ -9,12 +9,14 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Transform OptionsView;
     [SerializeField] private Transform Background;
     [SerializeField] private Transform WinScreen;
+    [SerializeField] private Transform PlayerDeath;
 
     public void HideAll()
     {
         MenuView.gameObject.SetActive(false);
         OptionsView.gameObject.SetActive(false);
         Background.gameObject.SetActive(false);
+        PlayerDeath.gameObject.SetActive(false);
     }
 
     public void ShowMenu()
@@ -26,5 +28,11 @@ public class MenuManager : MonoBehaviour
     public void ShowWinScreen()
     {
         WinScreen.gameObject.SetActive(true);
+    }
+
+    public void ShowDeathScreen()
+    {
+        PlayerDeath.gameObject.SetActive(true);
+
     }
 }

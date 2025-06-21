@@ -28,7 +28,7 @@ public class Options : MonoBehaviour
     private void InitializeSlider(Slider slider, string playerPrefKey, string mixerParameter)
     {
         // Ładowanie zapisanej wartości lub ustawienie domyślnej
-        float savedVolume = PlayerPrefs.GetFloat(playerPrefKey, 0.75f);
+        float savedVolume = PlayerPrefs.GetFloat(playerPrefKey, 0.5f);
         slider.value = savedVolume;
 
         // Ustawienie początkowej wartości w mixerze

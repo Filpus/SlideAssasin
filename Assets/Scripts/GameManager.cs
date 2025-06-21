@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     private void InstanceOnPlayerDie(object sender, EventArgs e)
     {
         IsPaused = true;
+        _menuManager.ShowDeathScreen();
     }
 
     private void LevelExitOnOnEndLevel(object sender, EventArgs e)
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
 
     private void InstanceOnOnReset(object sender, EventArgs e)
     {
+        Restart();
     }
 
     private void InstanceOnOnPause(object sender, EventArgs e)
@@ -83,6 +85,11 @@ public class GameManager : MonoBehaviour
         {
             LevelCleared?.Invoke(this, EventArgs.Empty);
         }
+    }
+
+    public void Restart()
+    {
+        
     }
 
 
