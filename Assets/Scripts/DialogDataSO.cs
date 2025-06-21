@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DailogData", menuName = "Scriptable Objects/DailogData")]
-public class DialogData : ScriptableObject
+public class DialogDataSO : ScriptableObject
 {
-    private Dictionary<string, List<string>> dialogueDict = new Dictionary<string, List<string>>(){
+    public Dictionary<string, List<string>> dialogueDict = new Dictionary<string, List<string>>(){
         { "intro", new List<string>()
             {
                 "Witaj, bohaterze.",

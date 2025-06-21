@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Level1
   EnemyNumber: 2
   NextLevelName: Level2
+  Dialog: intro

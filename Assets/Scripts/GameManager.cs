@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public LevelSO levelInfo;
 
     [SerializeField] private MenuManager _menuManager;
+    [SerializeField] private DialogManager _dialogManager;
     private int EnemyCounter;
     public  event EventHandler LevelCleared;
     
@@ -33,7 +34,6 @@ public class GameManager : MonoBehaviour
         GameInput.Instance.OnPause += InstanceOnOnPause;
         GameInput.Instance.OnReset += InstanceOnOnReset;
         levelExit.OnEndLevel += LevelExitOnOnEndLevel;
-        
     }
 
     private void InstanceOnPlayerDie(object sender, EventArgs e)
@@ -44,6 +44,10 @@ public class GameManager : MonoBehaviour
     private void LevelExitOnOnEndLevel(object sender, EventArgs e)
     {
         IsPaused = true;
+        if( levelInfo.Dialog !="")
+        {
+            _dialogManager.ShowDialog(levelInfo.Dialog);
+        }
         _menuManager.ShowWinScreen();
         PlayerPrefs.SetInt("UnlockedLevel", levelInfo.Number + 1);
     }

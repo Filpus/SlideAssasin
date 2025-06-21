@@ -10,12 +10,14 @@ public class DialogManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI textbox;
     public float typingSpeed = 0.05f;
-    [SerializeField] DialogData dialogData;
+    [SerializeField] DialogDataSO dialogData;
     private List<string> currentDialog;
     private string currentDialogKey= "prologue";
     private int currentDialogLine=0;
+    
     private bool isTyping = false;
     private bool skip = false;
+    private bool endOfDialog = false;
 
 
     void Start()
@@ -23,14 +25,31 @@ public class DialogManager : MonoBehaviour
         currentDialog = dialogData.getDialog(currentDialogKey);
     }
 
+    public void LoadDialog(string dialogKey)
+    {
+        currentDialogKey = dialogKey;
+        currentDialog = dialogData.getDialog(currentDialogKey);
+        currentDialogLine = 0;
+    }
 
     void Update()
     {
-        if (!skip && !isTyping)
+        while (!endOfDialog)
         {
-            NextSentence();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (isTyping)
+                {
+                    skip = true;
+                }
+                else
+                {
+                    NextSentence();
+                }
+            }
         }
     }
+
 
     IEnumerator TypeLine()
     {
@@ -39,8 +58,18 @@ public class DialogManager : MonoBehaviour
 
         foreach (char letter in currentDialog[currentDialogLine])
         {
-            textbox.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            if (skip)
+            {
+                textbox.text = currentDialog[currentDialogLine];
+                skip = false;
+                isTyping = false;
+                break;
+            }
+            else
+            {
+                textbox.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
         }
 
         isTyping = false;
@@ -52,11 +81,21 @@ public class DialogManager : MonoBehaviour
         if (currentDialogLine < currentDialog.Count - 1)
         {
             currentDialogLine++;
+            isTyping = true;
             StartCoroutine(TypeLine());
         }
         else
         {
             Debug.Log("Koniec dialogu");
+            endOfDialog = true;
         }
+    }
+
+    public void ShowDialog(string dialogKey)
+    {
+        LoadDialog(dialogKey);
+        endOfDialog = false;
+        currentDialogLine = 0;
+        StartCoroutine(TypeLine());
     }
 }

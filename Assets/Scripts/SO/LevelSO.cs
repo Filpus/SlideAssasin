@@ -9,5 +9,6 @@ public class LevelSO : ScriptableObject
     public string Name;
     public int EnemyNumber;
     public string NextLevelName;
+    public string Dialog="";
 
 }

@@ -614,7 +614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5.020111, y: -131.21269}
+  m_AnchoredPosition: {x: 5.0200806, y: -131.21268}
   m_SizeDelta: {x: -357.4836, y: -262.4158}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &480822053
@@ -910,7 +910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -339.91846, y: -84.61845}
+  m_AnchoredPosition: {x: -483, y: -97}
   m_SizeDelta: {x: 183.7631, y: 183.7631}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1005512915
@@ -1672,7 +1672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 341.8866, y: -84.618}
+  m_AnchoredPosition: {x: 483, y: -96}
   m_SizeDelta: {x: 179.8348, y: 183.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2102096023
@@ -1844,6 +1844,10 @@ PrefabInstance:
       propertyPath: levelExit
       value: 
       objectReference: {fileID: 1444426316}
+    - target: {fileID: 1897629602847540126, guid: 4c03a93d6502dba4dbf45c589fce1cb7, type: 3}
+      propertyPath: _dialogManager
+      value: 
+      objectReference: {fileID: 5237069415508833604}
     - target: {fileID: 2119728390463508048, guid: 4c03a93d6502dba4dbf45c589fce1cb7, type: 3}
       propertyPath: WinScreen
       value: 
