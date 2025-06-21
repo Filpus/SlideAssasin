@@ -21,6 +21,8 @@ public class BaseEnemy : MonoBehaviour, ILDtkImportedEntity, IInteractable
     [SerializeField] protected Direction frontDirection=Direction.Up;
     [SerializeField] [CanBeNull] protected BaseSound enemySound;
 
+    
+    protected Collider2D _collider2D;
     public void OnLDtkImportEntity(EntityInstance entity)
     {
         UnityEngine.Debug.Log("OnLDtkImportEntity called");
@@ -55,6 +57,7 @@ public class BaseEnemy : MonoBehaviour, ILDtkImportedEntity, IInteractable
     {
 
         enemyAnimator.SetDirection(frontDirection);
+        _collider2D = GetComponent<Collider2D>();
         AdjustPosition();
     }
 

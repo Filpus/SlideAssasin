@@ -7,11 +7,12 @@ public class ShieldEnemy : BaseEnemy
     {
         if ((int)this.frontDirection != (int)player.playerMovementState * -1)
         {
-            
-            enemyAnimator.PlayEnemyDie();
-            GameManager.Instance.EnemyDied();
-            Destroy(gameObject);
+            _collider2D.enabled = false;
+
             enemySound?.PlaySound();
+            enemyAnimator.PlayEnemyDie(); 
+            GameManager.Instance.EnemyDied();
+
             
             return true;
         }

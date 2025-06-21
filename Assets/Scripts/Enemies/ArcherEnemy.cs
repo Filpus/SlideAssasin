@@ -24,6 +24,11 @@ public class ArcherEnemy : BaseEnemy
 
     public override bool Interact(Player player)
     {
+        enemyAnimator.PlayEnemyDie();
+        
+        GameManager.Instance.EnemyDied();
+        _collider2D.enabled = false;
+
         return true;
     }
 }

@@ -86,7 +86,8 @@ public class Player : MonoBehaviour
                 moveDir = Vector2.right;
                 break; 
         }
-        float rotateSpeed = 20f;
+        
+        
         if(CanMove(moveDir, moveDistance))
         {
             Vector3 moveDir3 = new Vector3(moveDir.x, moveDir.y, 0f);
