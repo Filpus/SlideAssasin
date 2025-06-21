@@ -4,9 +4,12 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 using UnityEditor.Rendering;
+using UnityEditor;
 
 public class DialogManager : MonoBehaviour
 {
+    public static DialogManager Instance;
+
     [SerializeField] Transform dialogView;
     [SerializeField] TextMeshProUGUI textbox;
     public float typingSpeed = 0.05f;
@@ -20,11 +23,10 @@ public class DialogManager : MonoBehaviour
     private bool endOfDialog = false;
 
 
-    void Start()
+    public void Start()
     {
-        currentDialog = dialogData.getDialog(currentDialogKey);
+        GameInput.Instance.OnSkipDialog += DialogOnSkipDialog;
     }
-
     public void LoadDialog(string dialogKey)
     {
         currentDialogKey = dialogKey;
@@ -32,33 +34,23 @@ public class DialogManager : MonoBehaviour
         currentDialogLine = 0;
     }
 
-    void Update()
+    public void DialogOnSkipDialog(object sender, EventArgs e)
     {
-        while (!endOfDialog)
+        if (isTyping && !endOfDialog)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (isTyping)
-                {
-                    skip = true;
-                }
-                else
-                {
-                    NextSentence();
-                }
-            }
+            skip = true;
         }
-
-        if (endOfDialog)
+        else 
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (!endOfDialog) NextSentence();
+            else
             {
                 dialogView.gameObject.SetActive(false);
                 endOfDialog = false;
             }
         }
+        
     }
-
 
     IEnumerator TypeLine()
     {

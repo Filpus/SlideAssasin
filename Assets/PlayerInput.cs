@@ -144,6 +144,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkipDialog"",
+                    ""type"": ""Button"",
+                    ""id"": ""3ff1230b-e97a-4ace-a4d8-e11c0717dc28"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -256,6 +265,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""ExitMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e9511ef7-143b-4314-bbe7-414bf0f0f9b0"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkipDialog"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -270,6 +290,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_MoveRigth = m_Player.FindAction("MoveRigth", throwIfNotFound: true);
         m_Player_ResetLevel = m_Player.FindAction("ResetLevel", throwIfNotFound: true);
         m_Player_ExitMenu = m_Player.FindAction("ExitMenu", throwIfNotFound: true);
+        m_Player_SkipDialog = m_Player.FindAction("SkipDialog", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -356,6 +377,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MoveRigth;
     private readonly InputAction m_Player_ResetLevel;
     private readonly InputAction m_Player_ExitMenu;
+    private readonly InputAction m_Player_SkipDialog;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -391,6 +413,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/ExitMenu".
         /// </summary>
         public InputAction @ExitMenu => m_Wrapper.m_Player_ExitMenu;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SkipDialog".
+        /// </summary>
+        public InputAction @SkipDialog => m_Wrapper.m_Player_SkipDialog;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -435,6 +461,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @ExitMenu.started += instance.OnExitMenu;
             @ExitMenu.performed += instance.OnExitMenu;
             @ExitMenu.canceled += instance.OnExitMenu;
+            @SkipDialog.started += instance.OnSkipDialog;
+            @SkipDialog.performed += instance.OnSkipDialog;
+            @SkipDialog.canceled += instance.OnSkipDialog;
         }
 
         /// <summary>
@@ -464,6 +493,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @ExitMenu.started -= instance.OnExitMenu;
             @ExitMenu.performed -= instance.OnExitMenu;
             @ExitMenu.canceled -= instance.OnExitMenu;
+            @SkipDialog.started -= instance.OnSkipDialog;
+            @SkipDialog.performed -= instance.OnSkipDialog;
+            @SkipDialog.canceled -= instance.OnSkipDialog;
         }
 
         /// <summary>
@@ -546,5 +578,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnExitMenu(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SkipDialog" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSkipDialog(InputAction.CallbackContext context);
     }
 }

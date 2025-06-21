@@ -848,6 +848,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameMenager
       objectReference: {fileID: 0}
+    - target: {fileID: 7699900275155919106, guid: 4c03a93d6502dba4dbf45c589fce1cb7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7832959721408449495, guid: 4c03a93d6502dba4dbf45c589fce1cb7, type: 3}
       propertyPath: m_IsActive
       value: 1
