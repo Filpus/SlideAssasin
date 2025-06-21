@@ -1060,6 +1060,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1712141081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6140976899967553003, guid: 5bf8588b3dc78664caab17b065bc7fc6, type: 3}
+  m_PrefabInstance: {fileID: 1525080363997925389}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1844918331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,9 +1395,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2948071627236571719, guid: 4c03a93d6502dba4dbf45c589fce1cb7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1525080363997925390}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7304580537609283420, guid: 4c03a93d6502dba4dbf45c589fce1cb7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5237069415508833604}
   m_SourcePrefab: {fileID: 100100000, guid: 4c03a93d6502dba4dbf45c589fce1cb7, type: 3}
+--- !u!224 &5237069415508833602 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2948071627236571719, guid: 4c03a93d6502dba4dbf45c589fce1cb7, type: 3}
+  m_PrefabInstance: {fileID: 5237069415508833601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5237069415508833603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7304580537609283420, guid: 4c03a93d6502dba4dbf45c589fce1cb7, type: 3}
+  m_PrefabInstance: {fileID: 5237069415508833601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5237069415508833604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5237069415508833603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1622b1c2dfb6f4d900d9d355b65444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textbox: {fileID: 1712141081}
+  typingSpeed: 0.05
+  dialogData: {fileID: 11400000, guid: 120310f03bc758e4b8a1c0653264dbad, type: 2}
 --- !u!1001 &8320664152964876230
 PrefabInstance:
   m_ObjectHideFlags: 0

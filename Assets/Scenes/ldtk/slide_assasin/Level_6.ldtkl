@@ -106,7 +106,7 @@
 					"height": 18,
 					"defUid": 33,
 					"px": [81,225],
-					"fieldInstances": [{ "__identifier": "Side", "__type": "Int", "__value": -2, "__tile": null, "defUid": 34, "realEditorValues": [{ "id": "V_Int", "params": [-2] }] }],
+					"fieldInstances": [{ "__identifier": "Side", "__type": "Int", "__value": 2, "__tile": null, "defUid": 34, "realEditorValues": [{ "id": "V_Int", "params": [2] }] }],
 					"__worldX": 465,
 					"__worldY": 657
 				},

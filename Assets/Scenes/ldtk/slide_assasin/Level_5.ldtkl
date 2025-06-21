@@ -122,7 +122,7 @@
 					"height": 18,
 					"defUid": 41,
 					"px": [135,153],
-					"fieldInstances": [{ "__identifier": "Side", "__type": "Int", "__value": 2, "__tile": null, "defUid": 42, "realEditorValues": [{ "id": "V_Int", "params": [2] }] }],
+					"fieldInstances": [{ "__identifier": "Side", "__type": "Int", "__value": -2, "__tile": null, "defUid": 42, "realEditorValues": [{ "id": "V_Int", "params": [-2] }] }],
 					"__worldX": 151,
 					"__worldY": 569
 				},
@@ -138,7 +138,7 @@
 					"height": 18,
 					"defUid": 35,
 					"px": [81,153],
-					"fieldInstances": [{ "__identifier": "Side", "__type": "Int", "__value": -2, "__tile": null, "defUid": 36, "realEditorValues": [{ "id": "V_Int", "params": [-2] }] }],
+					"fieldInstances": [{ "__identifier": "Side", "__type": "Int", "__value": 2, "__tile": null, "defUid": 36, "realEditorValues": [{ "id": "V_Int", "params": [2] }] }],
 					"__worldX": 97,
 					"__worldY": 569
 				},
@@ -170,7 +170,7 @@
 					"height": 18,
 					"defUid": 33,
 					"px": [63,99],
-					"fieldInstances": [{ "__identifier": "Side", "__type": "Int", "__value": 2, "__tile": null, "defUid": 34, "realEditorValues": [{ "id": "V_Int", "params": [2] }] }],
+					"fieldInstances": [{ "__identifier": "Side", "__type": "Int", "__value": -2, "__tile": null, "defUid": 34, "realEditorValues": [{ "id": "V_Int", "params": [-2] }] }],
 					"__worldX": 79,
 					"__worldY": 515
 				},

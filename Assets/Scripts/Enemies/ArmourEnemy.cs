@@ -22,12 +22,11 @@ public class ArmourEnemy : BaseEnemy
                 state = ArmourState.Fragile;
                 enemyAnimator.PlayEnemyAction();
                 return false;
-                break;
+                
             case ArmourState.Fragile:
                 enemyAnimator.PlayEnemyDie();
                 GameManager.Instance.EnemyDied();
                 return true;
-                break;
         }
 
         return false;

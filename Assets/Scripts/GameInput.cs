@@ -15,7 +15,8 @@ public class GameInput : MonoBehaviour
 
     public event EventHandler OnReset;
     public event EventHandler OnPause;
-    
+    public event EventHandler OnSkipDialog;
+
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class GameInput : MonoBehaviour
         playerInput.Player.MoveRigth.performed += MoveRigthOnPerformed;
         playerInput.Player.ResetLevel.performed += ResetLevelOnperformed;
         playerInput.Player.ExitMenu.performed += ExitMenuOnperformed;
+        playerInput.Player.SkipDialog.performed += SkipDialogOnperformed;
     }
 
     private void ExitMenuOnperformed(InputAction.CallbackContext obj)
@@ -59,5 +61,10 @@ public class GameInput : MonoBehaviour
     private void MoveUpOnPerformed(InputAction.CallbackContext obj)
     {
         OnMoveUp?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void SkipDialogOnperformed(InputAction.CallbackContext obj)
+    {
+        OnSkipDialog?.Invoke(this, EventArgs.Empty);
     }
 }
