@@ -8,7 +8,7 @@ public class LvlExit : MonoBehaviour, ILDtkImportedEntity
     //[SerializeField] private LvlExitVisual lvlExitVisual;
 
     public event EventHandler OnEndLevel;
-    public bool IsAvtive = false;
+    public bool IsActive = false;
     void Start()
     {
         GameManager.Instance.LevelCleared += GameManagerOnLevelCleared;
@@ -21,7 +21,7 @@ public class LvlExit : MonoBehaviour, ILDtkImportedEntity
 
     private void GameManagerOnLevelCleared(object sender, EventArgs e)
     {
-        IsAvtive = true;
+        IsActive = true;
       //  lvlExitVisual.ShowActive();
     }
     
@@ -30,10 +30,11 @@ public class LvlExit : MonoBehaviour, ILDtkImportedEntity
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("test");
-        if (IsAvtive)
+        Debug.Log("test");
+        if (IsActive)
         {
             EndLevel();
+            Debug.Log("EndLevel");
         }
     }
 
