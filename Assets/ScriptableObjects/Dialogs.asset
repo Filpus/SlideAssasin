@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 547aafefdcbfa9b40a2ba2230df6bc90, type: 3}
-  m_Name: Level1
+  m_Script: {fileID: 11500000, guid: 03a0f035d58aca74dbcceeb4c6d104df, type: 3}
+  m_Name: Dialogs
   m_EditorClassIdentifier: 
-  Number: 1
-  Name: Level1
-  EnemyNumber: 2
-  NextLevelName: Level2
-  Dialog: intro
