@@ -7,7 +7,7 @@ using UnityEditor.Rendering;
 
 public class DialogManager : MonoBehaviour
 {
-
+    [SerializeField] Transform dialogView;
     [SerializeField] TextMeshProUGUI textbox;
     public float typingSpeed = 0.05f;
     [SerializeField] DialogDataSO dialogData;
@@ -46,6 +46,15 @@ public class DialogManager : MonoBehaviour
                 {
                     NextSentence();
                 }
+            }
+        }
+
+        if (endOfDialog)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                dialogView.gameObject.SetActive(false);
+                endOfDialog = false;
             }
         }
     }
@@ -93,6 +102,7 @@ public class DialogManager : MonoBehaviour
 
     public void ShowDialog(string dialogKey)
     {
+        dialogView.gameObject.SetActive(true);
         LoadDialog(dialogKey);
         endOfDialog = false;
         currentDialogLine = 0;

@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
 
 
     [SerializeField] public LevelSO levelInfo;
-
     [SerializeField] private MenuManager _menuManager;
     [SerializeField] private DialogManager _dialogManager;
     private int EnemyCounter;
