@@ -308,6 +308,10 @@ PrefabInstance:
       propertyPath: levelExit
       value: 
       objectReference: {fileID: 1135403709}
+    - target: {fileID: 1897629602847540126, guid: 4c03a93d6502dba4dbf45c589fce1cb7, type: 3}
+      propertyPath: levelInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 8160b9ad72937b04caefda1ab3ade59a, type: 2}
     - target: {fileID: 7304580537609283420, guid: 4c03a93d6502dba4dbf45c589fce1cb7, type: 3}
       propertyPath: m_Name
       value: GameMenager
