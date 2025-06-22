@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8704336038598897201}
   - component: {fileID: 3041275591607154107}
+  - component: {fileID: 7504839718119037412}
   - component: {fileID: 1872225163051678881}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.41573456, y: -0.06297727, z: 0.043682404}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1918026613636318684}
   m_Father: {fileID: 0}
@@ -78,8 +79,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7504839718119037412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571706896898075672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5858f8963f0fd9f43977a5146b978c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!114 &1872225163051678881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,9 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867c37904485584419fe6004e14f223c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group_id: 0
   _crateAnimator: {fileID: 8816733118368065416}
-  isOpen: 0
 --- !u!1001 &8632194137010059985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,10 +118,6 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: ef1bdc2c6a736c0479d787d6061a4fe7, type: 3}
       propertyPath: m_Name
       value: Crate
-      objectReference: {fileID: 0}
-    - target: {fileID: -2253911629886400664, guid: ef1bdc2c6a736c0479d787d6061a4fe7, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1160356261127867848, guid: ef1bdc2c6a736c0479d787d6061a4fe7, type: 3}
       propertyPath: m_Controller

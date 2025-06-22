@@ -95,9 +95,7 @@
         {
             "_key": "Balcony",
             "_asset": {
-                "fileID": 87876592056289900,
-                "guid": "e6135a78ee3be544480de3e97f4ffc19",
-                "type": 3
+                "instanceID": 0
             }
         },
         {
@@ -119,17 +117,13 @@
         {
             "_key": "Entrance",
             "_asset": {
-                "fileID": 5111916981512506655,
-                "guid": "62d96093d6ce82949839023a0c25b780",
-                "type": 3
+                "instanceID": 0
             }
         },
         {
             "_key": "DangerZone",
             "_asset": {
-                "fileID": 8930070513511842851,
-                "guid": "6f53c5e3ca53bc144a3c0b665f669d76",
-                "type": 3
+                "instanceID": 0
             }
         }
     ]
