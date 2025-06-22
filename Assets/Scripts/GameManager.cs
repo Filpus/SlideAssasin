@@ -12,12 +12,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private MenuManager _menuManager;
     [SerializeField] private DialogManager _dialogManager;
     private int EnemyCounter;
-    public  event EventHandler LevelCleared;
-    
+    public event EventHandler LevelCleared;
+
     public static GameManager Instance;
 
     [SerializeField] private LvlExit levelExit;
-    public  event EventHandler TurnHappened;
+    public event EventHandler TurnHappened;
     public bool IsPaused = false;
     void Awake()
     {
@@ -38,12 +38,13 @@ public class GameManager : MonoBehaviour
     private void InstanceOnPlayerDie(object sender, EventArgs e)
     {
         IsPaused = true;
+        _menuManager.ShowDeathScreen();
     }
 
     private void LevelExitOnOnEndLevel(object sender, EventArgs e)
     {
         IsPaused = true;
-        if( levelInfo.Dialog !="")
+        if (levelInfo.Dialog != "")
         {
             _dialogManager.ShowDialog(levelInfo.Dialog);
         }
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
     {
         if (IsPaused)
         {
-            _menuManager.HideAll();    
+            _menuManager.HideAll();
         }
         else
         {
@@ -73,8 +74,8 @@ public class GameManager : MonoBehaviour
         }
 
         IsPaused = !IsPaused;
-        
-        
+
+
     }
 
     private void PlayerOnPlayerMoved(object sender, EventArgs e)
@@ -89,6 +90,11 @@ public class GameManager : MonoBehaviour
         {
             LevelCleared?.Invoke(this, EventArgs.Empty);
         }
+    }
+
+    public void Restart()
+    {
+
     }
 
 
