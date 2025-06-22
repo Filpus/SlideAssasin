@@ -305,6 +305,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1897629602847540126, guid: 4c03a93d6502dba4dbf45c589fce1cb7, type: 3}
+      propertyPath: level
+      value: 
+      objectReference: {fileID: 6008351742203977117}
+    - target: {fileID: 1897629602847540126, guid: 4c03a93d6502dba4dbf45c589fce1cb7, type: 3}
       propertyPath: levelExit
       value: 
       objectReference: {fileID: 1104392408}
@@ -389,6 +393,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 636aec843adb2d44a98c3ea2340e6c4e, type: 3}
+--- !u!4 &6008351742203977117 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 250898742628975595, guid: 636aec843adb2d44a98c3ea2340e6c4e, type: 3}
+  m_PrefabInstance: {fileID: 6008351742203977116}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
