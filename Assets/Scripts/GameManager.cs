@@ -7,17 +7,16 @@ public class GameManager : MonoBehaviour
 
 
 
-
+    [SerializeField] public Transform level;
     [SerializeField] public LevelSO levelInfo;
     [SerializeField] private MenuManager _menuManager;
     [SerializeField] private DialogManager _dialogManager;
     private int EnemyCounter;
-    public  event EventHandler LevelCleared;
-    
+    public event EventHandler LevelCleared;
+
     public static GameManager Instance;
 
-    [SerializeField] private LvlExit levelExit;
-    public  event EventHandler TurnHappened;
+    public event EventHandler TurnHappened;
     public bool IsPaused = false;
     void Awake()
     {
@@ -32,7 +31,7 @@ public class GameManager : MonoBehaviour
         Player.Instance.PlayerDie += InstanceOnPlayerDie;
         GameInput.Instance.OnPause += InstanceOnOnPause;
         GameInput.Instance.OnReset += InstanceOnOnReset;
-        levelExit.OnEndLevel += LevelExitOnOnEndLevel;
+        LvlExit.Instance.OnEndLevel += LevelExitOnOnEndLevel;
     }
 
     private void InstanceOnPlayerDie(object sender, EventArgs e)
@@ -41,10 +40,10 @@ public class GameManager : MonoBehaviour
         _menuManager.ShowDeathScreen();
     }
 
-    private void LevelExitOnOnEndLevel(object sender, EventArgs e)
+    public void LevelExitOnOnEndLevel(object sender, EventArgs e)
     {
         IsPaused = true;
-        if( levelInfo.Dialog !="")
+        if (levelInfo.Dialog != "")
         {
             _dialogManager.ShowDialog(levelInfo.Dialog);
         }
@@ -57,11 +56,30 @@ public class GameManager : MonoBehaviour
         Restart();
     }
 
+    public void Restart()
+    {
+        Vector3 oldPosition = level.transform.position;
+        Quaternion oldRotation = level.transform.rotation;
+        Destroy(level.gameObject);
+
+        Player.Instance.PlayerMoved -= PlayerOnPlayerMoved;
+        Player.Instance.PlayerDie -= InstanceOnPlayerDie;
+
+        level = Instantiate(levelInfo.LevelPrefab, oldPosition, oldRotation);
+        EnemyCounter = levelInfo.EnemyNumber;
+
+        Player.Instance.PlayerMoved += PlayerOnPlayerMoved;
+        Player.Instance.PlayerDie += InstanceOnPlayerDie;
+        
+        _menuManager.HideAll();
+        IsPaused = false;
+    }
+
     private void InstanceOnOnPause(object sender, EventArgs e)
     {
         if (IsPaused)
         {
-            _menuManager.HideAll();    
+            _menuManager.HideAll();
         }
         else
         {
@@ -69,8 +87,8 @@ public class GameManager : MonoBehaviour
         }
 
         IsPaused = !IsPaused;
-        
-        
+
+
     }
 
     private void PlayerOnPlayerMoved(object sender, EventArgs e)
@@ -85,11 +103,6 @@ public class GameManager : MonoBehaviour
         {
             LevelCleared?.Invoke(this, EventArgs.Empty);
         }
-    }
-
-    public void Restart()
-    {
-        
     }
 
 

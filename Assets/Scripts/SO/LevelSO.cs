@@ -10,5 +10,6 @@ public class LevelSO : ScriptableObject
     public int EnemyNumber;
     public string NextLevelName;
     public string Dialog="";
+    public Transform LevelPrefab;
 
 }
