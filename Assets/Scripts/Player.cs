@@ -43,6 +43,15 @@ public class Player : MonoBehaviour
     {
         if (Instance != null)
         {
+            GameInput.Instance.OnMoveUp -= Instance.InstanceOnOnMoveUp;
+            GameInput.Instance.OnMoveDown -= Instance.InstanceOnOnMoveDown;
+            GameInput.Instance.OnMoveRight -= Instance.InstanceOnOnMoveRight;
+            GameInput.Instance.OnMoveLeft -= Instance.InstanceOnOnMoveLeft;
+            Instance.PlayerDie = null;
+            Instance.PlayerMoved = null;
+
+
+            Destroy(Player.Instance.gameObject);
             Debug.LogError("Jest wiele instancji gracza!");
         }
 
@@ -57,8 +66,6 @@ public class Player : MonoBehaviour
         GameInput.Instance.OnMoveRight += InstanceOnOnMoveRight;
         GameInput.Instance.OnMoveLeft += InstanceOnOnMoveLeft;
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -110,11 +117,6 @@ public class Player : MonoBehaviour
             }
         
     }
-
-
-
-
-
 
     public bool IsMoving()
     {
@@ -233,8 +235,17 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void OnDestroy()
+    {
+        GameInput.Instance.OnMoveUp -= InstanceOnOnMoveUp;
+        GameInput.Instance.OnMoveDown -= InstanceOnOnMoveDown;
+        GameInput.Instance.OnMoveRight -= InstanceOnOnMoveRight;
+        GameInput.Instance.OnMoveLeft -= InstanceOnOnMoveLeft;
 
-
-    
-
+        if (Instance == this)
+    {
+        Instance = null;
+    }
+    }
 }
+

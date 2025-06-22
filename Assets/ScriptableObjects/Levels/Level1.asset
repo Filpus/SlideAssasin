@@ -17,3 +17,4 @@ MonoBehaviour:
   EnemyNumber: 2
   NextLevelName: Level2
   Dialog: intro
+  LevelPrefab: {fileID: 3795433067436486333, guid: 404a088c99da3b74f92bafcc110fa4ee, type: 3}

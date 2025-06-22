@@ -16,6 +16,7 @@ public class ArcherEnemy : BaseEnemy
     private bool IsReady = false;
     protected override void Start()
     {
+        IsReady = false;
         base.Start();
         GameManager.Instance.TurnHappened += GameManagerOnTurnHappened;
     }
@@ -80,5 +81,10 @@ public class ArcherEnemy : BaseEnemy
         _collider2D.enabled = false;
 
         return true;
+    }
+
+    public void OnDestroy()
+    {
+        GameManager.Instance.TurnHappened -= GameManagerOnTurnHappened;
     }
 }

@@ -35,4 +35,14 @@ public class MenuManager : MonoBehaviour
         PlayerDeath.gameObject.SetActive(true);
 
     }
+
+    public void HideDeathScreen()
+    {
+        PlayerDeath.gameObject.SetActive(false);
+    }
+
+    public void HideWinScreen()
+    {
+        WinScreen.gameObject.SetActive(false);
+    }
 }
