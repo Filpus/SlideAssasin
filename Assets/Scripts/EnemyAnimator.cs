@@ -24,6 +24,7 @@ public class EnemyAnimator : MonoBehaviour
     public void PlayEnemyDie()
     {
         animator.SetTrigger(DIE);
+
     }
 
     public void PlayEnemyAction()
