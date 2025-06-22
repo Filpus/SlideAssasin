@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         Restart();
     }
 
-    private void Restart()
+    public void Restart()
     {
         Vector3 oldPosition = level.transform.position;
         Quaternion oldRotation = level.transform.rotation;

@@ -513,10 +513,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ed9586cda62824a9e2b77c26d34d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: {fileID: 0}
   levelInfo: {fileID: 11400000, guid: ae1be44c65cdaef44870e665b3a77d0a, type: 2}
   _menuManager: {fileID: 2119728390463508048}
   _dialogManager: {fileID: 7699900275155919106}
-  levelExit: {fileID: 0}
   IsPaused: 0
 --- !u!114 &2119728390463508048
 MonoBehaviour:
@@ -1849,6 +1849,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1006598635203410527}
     m_Modifications:
+    - target: {fileID: 445529470253137359, guid: 772f936992a55434ba2afdeaf1e5a72b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 445529470253137359, guid: 772f936992a55434ba2afdeaf1e5a72b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 445529470253137359, guid: 772f936992a55434ba2afdeaf1e5a72b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1897629602847540126}
+    - target: {fileID: 445529470253137359, guid: 772f936992a55434ba2afdeaf1e5a72b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 445529470253137359, guid: 772f936992a55434ba2afdeaf1e5a72b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 445529470253137359, guid: 772f936992a55434ba2afdeaf1e5a72b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 445529470253137359, guid: 772f936992a55434ba2afdeaf1e5a72b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1089914192793974314, guid: 772f936992a55434ba2afdeaf1e5a72b, type: 3}
       propertyPath: m_text
       value: Restart
