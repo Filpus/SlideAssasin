@@ -56,10 +56,12 @@ public class GameManager : MonoBehaviour
     {
         Vector3 oldPosition = level.transform.position;
         Quaternion oldRotation = level.transform.rotation;
+        Destroy(level.gameObject);
 
-        Destroy(level);
+
 
         level = Instantiate(levelInfo.LevelPrefab, oldPosition, oldRotation);
+        EnemyCounter = levelInfo.EnemyNumber;
     }
 
     private void InstanceOnOnPause(object sender, EventArgs e)
@@ -90,11 +92,6 @@ public class GameManager : MonoBehaviour
         {
             LevelCleared?.Invoke(this, EventArgs.Empty);
         }
-    }
-
-    public void Restart()
-    {
-
     }
 
 

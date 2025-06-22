@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
     {
         if (Instance != null)
         {
+            Destroy(Player.Instance.gameObject);
             Debug.LogError("Jest wiele instancji gracza!");
         }
 
@@ -50,15 +51,21 @@ public class Player : MonoBehaviour
         playerMovementState = MovementStates.Standing;
     }
 
-    private void Start()
+    /*private void Start()
     {
         GameInput.Instance.OnMoveUp += InstanceOnOnMoveUp;
         GameInput.Instance.OnMoveDown += InstanceOnOnMoveDown; 
         GameInput.Instance.OnMoveRight += InstanceOnOnMoveRight;
         GameInput.Instance.OnMoveLeft += InstanceOnOnMoveLeft;
+    }*/
+
+    private void OnEnable()
+    {
+        GameInput.Instance.OnMoveUp += InstanceOnOnMoveUp;
+        GameInput.Instance.OnMoveDown += InstanceOnOnMoveDown;
+        GameInput.Instance.OnMoveRight += InstanceOnOnMoveRight;
+        GameInput.Instance.OnMoveLeft += InstanceOnOnMoveLeft;
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -110,11 +117,6 @@ public class Player : MonoBehaviour
             }
         
     }
-
-
-
-
-
 
     public bool IsMoving()
     {
@@ -233,8 +235,17 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void OnDestroy()
+    {
+        GameInput.Instance.OnMoveUp -= InstanceOnOnMoveUp;
+        GameInput.Instance.OnMoveDown -= InstanceOnOnMoveDown;
+        GameInput.Instance.OnMoveRight -= InstanceOnOnMoveRight;
+        GameInput.Instance.OnMoveLeft -= InstanceOnOnMoveLeft;
 
-
-    
-
+        if (Instance == this)
+    {
+        Instance = null;
+    }
+    }
 }
+

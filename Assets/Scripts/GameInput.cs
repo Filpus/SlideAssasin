@@ -45,22 +45,34 @@ public class GameInput : MonoBehaviour
 
     private void MoveRigthOnPerformed(InputAction.CallbackContext obj)
     {
-        OnMoveRight?.Invoke(this, EventArgs.Empty);
+        if (Player.Instance != null)
+        {
+            OnMoveRight?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     private void MoveLeftOnPerformed(InputAction.CallbackContext obj)
     {
-        OnMoveLeft?.Invoke(this, EventArgs.Empty);
+        if (Player.Instance != null)
+        {
+            OnMoveLeft?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     private void MoveDownOnPerformed(InputAction.CallbackContext obj)
     {
-        OnMoveDown?.Invoke(this, EventArgs.Empty);
+        if (Player.Instance != null)
+        {
+            OnMoveDown?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     private void MoveUpOnPerformed(InputAction.CallbackContext obj)
     {
-        OnMoveUp?.Invoke(this, EventArgs.Empty);
+        if (Player.Instance != null)
+        {
+            OnMoveUp?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     private void SkipDialogOnperformed(InputAction.CallbackContext obj)
