@@ -95,12 +95,12 @@ public class Player : MonoBehaviour
             }
 
 
-            if (CanMove(moveDir, moveDistance))
+            if (CanMove(moveDir, moveDistance/2))
             {
                 Vector3 moveDir3 = new Vector3(moveDir.x, moveDir.y, 0f);
                 transform.position += moveDir3 * moveDistance;
 
-            }
+        }
             else
             {
                 if (TryToInteract(moveDir))
@@ -138,12 +138,13 @@ public class Player : MonoBehaviour
 
     float RoundToNearestHalf(double value)
     {
-        return (float)Math.Round(value * 2, MidpointRounding.AwayFromZero) / 2;
+        float tmp = (float)Math.Round(value * 2f, MidpointRounding.AwayFromZero) / 2f;
+        return tmp;
     }
 
     private bool TryToInteract(Vector2 moveDir)
     {
-        float interactionDistance = 1f;
+        float interactionDistance =1f;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, moveDir, interactionDistance, enemiesLayerMask);
 
         if (hit.collider != null)
