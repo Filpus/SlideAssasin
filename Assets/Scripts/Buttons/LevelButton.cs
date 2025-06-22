@@ -19,6 +19,7 @@ public class LevelButton : MonoBehaviour
 
     private void Call()
     {
+        MusicManager.Instance.PlayLevelMusic();
         print(LevelInfo);
         SceneManager.LoadScene(LevelInfo.Name);
 

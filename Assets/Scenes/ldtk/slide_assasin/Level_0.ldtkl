@@ -169,10 +169,13 @@
 					"height": 18,
 					"defUid": 48,
 					"px": [63,81],
-					"fieldInstances": [{ "__identifier": "isOpen", "__type": "Bool", "__value": true, "__tile": null, "defUid": 49, "realEditorValues": [{
-						"id": "V_Bool",
-						"params": [ true ]
-					}] }],
+					"fieldInstances": [
+						{ "__identifier": "isOpen", "__type": "Bool", "__value": true, "__tile": null, "defUid": 49, "realEditorValues": [{
+							"id": "V_Bool",
+							"params": [ true ]
+						}] },
+						{ "__identifier": "crate_group", "__type": "Int", "__value": 0, "__tile": null, "defUid": 246, "realEditorValues": [] }
+					],
 					"__worldX": 63,
 					"__worldY": 81
 				}

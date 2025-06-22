@@ -13,6 +13,8 @@ public class ArcherEnemy : BaseEnemy
     [SerializeField] private LayerMask obstaclesLayer;
     [SerializeField] private LayerMask playerLayer;
 
+    private bool IsAlive = true;
+
     private bool IsReady = false;
     protected override void Start()
     {
@@ -23,17 +25,20 @@ public class ArcherEnemy : BaseEnemy
 
     private void GameManagerOnTurnHappened(object sender, EventArgs e)
     {
-        if (IsReady)
+        if (IsAlive)
         {
-            Shot();
-            IsReady = false;
-            enemyAnimator.PlayEnemyAction();
-        }
-        else
-        {
-            IsReady = true;
-            enemyAnimator.PlayEnemyAction();
+            if (IsReady)
+            {
+                Shot();
+                IsReady = false;
+                enemyAnimator.PlayEnemyAction();
+            }
+            else
+            {
+                IsReady = true;
+                enemyAnimator.PlayEnemyAction();
 
+            }
         }
     }
 
@@ -76,7 +81,7 @@ public class ArcherEnemy : BaseEnemy
     public override bool Interact(Player player)
     {
         enemyAnimator.PlayEnemyDie();
-        
+        IsAlive = false;
         GameManager.Instance.EnemyDied();
         _collider2D.enabled = false;
 

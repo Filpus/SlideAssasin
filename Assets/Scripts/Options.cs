@@ -21,8 +21,8 @@ public class Options : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
         // Inicjalizacja sliderów
-        InitializeSlider(_musicSlider, _musicVolumeKey, "Music");
-        InitializeSlider(_sfxSlider, _sfxVolumeKey, "SFX");
+        InitializeSlider(_musicSlider, _musicVolumeKey, "MusicVolume");
+        InitializeSlider(_sfxSlider, _sfxVolumeKey, "SFXVolume");
     }
 
     private void InitializeSlider(Slider slider, string playerPrefKey, string mixerParameter)

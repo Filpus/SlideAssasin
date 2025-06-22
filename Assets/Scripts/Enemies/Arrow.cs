@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Arrow : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Arrow : MonoBehaviour
     [SerializeField] private float moveSpeed = 20f;
     [SerializeField] private LayerMask obstaclesLayer;
     [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private ArrowAnimator _arrowAnimator;
+    [SerializeField] private ArrowVisual _arrowVisual;
     public Direction ArrowDirection = Direction.Up;
     
     
@@ -26,7 +27,6 @@ public class Arrow : MonoBehaviour
         arrowCollider = GetComponent<Collider2D>();
         
         // Automatyczne zniszczenie strzały po 10 sekundach (zabezpieczenie)
-        Destroy(gameObject, 10f);
     }
 
     void Update()
@@ -51,7 +51,7 @@ public class Arrow : MonoBehaviour
                 moveDirection = Vector2.right;
                 break;
         }
-        _arrowAnimator.SetDirection(ArrowDirection);
+        _arrowVisual.SetDirection(ArrowDirection);
     }
 
     private void HandleMovement()
