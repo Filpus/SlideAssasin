@@ -6,11 +6,12 @@ public class DangerPoint : MonoBehaviour, ILDtkImportedEntity
 
 
     private bool isActive = false;
+    private int groupId = 0;
     [SerializeField] private DangerPointAnimator _pointAnimator;
 
     public void OnLDtkImportEntity(EntityInstance entityInstance)
     {
-        
+        groupId = entityInstance.GetInt("group_id");
     }
 
 
