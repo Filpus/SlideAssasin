@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
 
             if (MovementStates.Standing != playerMovementState)
             {
-                if (CanMove(moveDir, moveDistance))
+                if (CanMove(moveDir, moveDistance/2))
                 {
                     Vector3 moveDir3 = new Vector3(moveDir.x, moveDir.y, 0f);
                     transform.position += moveDir3 * moveDistance;
