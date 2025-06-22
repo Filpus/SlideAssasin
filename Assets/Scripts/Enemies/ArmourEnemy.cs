@@ -26,6 +26,7 @@ public class ArmourEnemy : BaseEnemy
             case ArmourState.Fragile:
                 enemyAnimator.PlayEnemyDie();
                 GameManager.Instance.EnemyDied();
+                _collider2D.enabled = false;
                 return true;
         }
 
