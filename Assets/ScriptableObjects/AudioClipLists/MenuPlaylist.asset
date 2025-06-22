@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d685debabfdd4883924edf518db5e932, type: 3}
   m_Name: MenuPlaylist
   m_EditorClassIdentifier: 
-  AudioClips: []
+  AudioClips:
+  - {fileID: 8300000, guid: eae933ecbd2c9f642b74cff28f37d04a, type: 3}

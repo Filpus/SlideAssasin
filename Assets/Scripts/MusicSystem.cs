@@ -7,10 +7,12 @@ public class MusicManager : MonoBehaviour
 
     private AudioSource _audioSource;
 
-    [SerializeField] private AudioClipListSO playlist;
+    [SerializeField] private AudioClipListSO menuList;
+    [SerializeField] private AudioClipListSO levelList;
     void Start()
     {
 
+        _audioSource = GetComponent<AudioSource>();
         if (Instance == null)
         {
             MusicManager.Instance = this;
@@ -20,7 +22,21 @@ public class MusicManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        PlayMenuMusic();
     }
 
+
+    public void PlayMenuMusic()
+    {
+        _audioSource.clip = menuList.TakeRandom();
+        _audioSource.Play();
+    }
     
+    
+    public void PlayLevelMusic()
+    {
+        _audioSource.clip = levelList.TakeRandom();
+        _audioSource.Play();
+    }
+
 }

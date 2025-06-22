@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d685debabfdd4883924edf518db5e932, type: 3}
   m_Name: LevelPlaylist
   m_EditorClassIdentifier: 
-  AudioClips: []
+  AudioClips:
+  - {fileID: 8300000, guid: d41620f553a40e84b814f8d58a7660f6, type: 3}
