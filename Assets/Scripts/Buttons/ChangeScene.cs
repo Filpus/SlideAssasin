@@ -13,6 +13,10 @@ public class ChangeScene : MonoBehaviour
 
     private void Call()
     {
+        if (SceneName == "Menu")
+        {
+            MusicManager.Instance.PlayMenuMusic();
+        }
         SceneManager.LoadScene(SceneName);
 
     }

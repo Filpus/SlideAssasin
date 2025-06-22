@@ -418,8 +418,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Music
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bd5ada6c4f2fb0c4295a19e0074d0abb, type: 2}
-  m_sharedMaterial: {fileID: 6773343931187182532, guid: bd5ada6c4f2fb0c4295a19e0074d0abb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1091,8 +1091,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sound
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bd5ada6c4f2fb0c4295a19e0074d0abb, type: 2}
-  m_sharedMaterial: {fileID: 6773343931187182532, guid: bd5ada6c4f2fb0c4295a19e0074d0abb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1206,6 +1206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 544062894521423090}
+  - component: {fileID: 2339585045445295229}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -1234,6 +1235,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2339585045445295229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8292667311990019541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c4fad49841ea84a95b06a8418e931e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 24100000, guid: 7c4082681eb15414fad1a332ffa253b2, type: 2}
+  _musicSlider: {fileID: 3815093899688095206}
+  _sfxSlider: {fileID: 2524972466289426133}
+  _musicVolumeKey: MusicVolume
+  _sfxVolumeKey: SFXVolume
 --- !u!1001 &1865748492730432782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1248,6 +1266,14 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 1089914192793974314, guid: 772f936992a55434ba2afdeaf1e5a72b, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 1089914192793974314, guid: 772f936992a55434ba2afdeaf1e5a72b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 1857298756845029817, guid: 772f936992a55434ba2afdeaf1e5a72b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
