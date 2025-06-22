@@ -16,6 +16,7 @@ public class ArcherEnemy : BaseEnemy
     private bool IsReady = false;
     protected override void Start()
     {
+        IsReady = false;
         base.Start();
         GameManager.Instance.TurnHappened += GameManagerOnTurnHappened;
     }

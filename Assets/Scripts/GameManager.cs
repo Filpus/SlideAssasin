@@ -53,6 +53,11 @@ public class GameManager : MonoBehaviour
 
     private void InstanceOnOnReset(object sender, EventArgs e)
     {
+        Restart();
+    }
+
+    private void Restart()
+    {
         Vector3 oldPosition = level.transform.position;
         Quaternion oldRotation = level.transform.rotation;
         Destroy(level.gameObject);
@@ -65,6 +70,9 @@ public class GameManager : MonoBehaviour
 
         Player.Instance.PlayerMoved += PlayerOnPlayerMoved;
         Player.Instance.PlayerDie += InstanceOnPlayerDie;
+        
+        _menuManager.HideAll();
+        IsPaused = false;
     }
 
     private void InstanceOnOnPause(object sender, EventArgs e)
