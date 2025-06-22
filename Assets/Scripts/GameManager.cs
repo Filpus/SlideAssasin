@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
 
 
-
+    [SerializeField] public Transform level;
     [SerializeField] public LevelSO levelInfo;
     [SerializeField] private MenuManager _menuManager;
     [SerializeField] private DialogManager _dialogManager;
@@ -53,6 +53,12 @@ public class GameManager : MonoBehaviour
 
     private void InstanceOnOnReset(object sender, EventArgs e)
     {
+        Vector3 oldPosition = level.transform.position;
+        Quaternion oldRotation = level.transform.rotation;
+
+        Destroy(level);
+
+        level = Instantiate(levelInfo.LevelPrefab, oldPosition, oldRotation);
     }
 
     private void InstanceOnOnPause(object sender, EventArgs e)
