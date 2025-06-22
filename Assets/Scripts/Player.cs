@@ -35,7 +35,6 @@ public class Player : MonoBehaviour
 
     public  event EventHandler PlayerMoved;
     public event EventHandler PlayerDie;
-    public event EventHandler PlayerEndMovement;
 
     private float playerSize = 1f;
     
@@ -50,7 +49,6 @@ public class Player : MonoBehaviour
             GameInput.Instance.OnMoveLeft -= Instance.InstanceOnOnMoveLeft;
             Instance.PlayerDie = null;
             Instance.PlayerMoved = null;
-            Instance.PlayerEndMovement = null;
 
 
             Destroy(Player.Instance.gameObject);
@@ -96,31 +94,28 @@ public class Player : MonoBehaviour
                     break;
             }
 
-            if (MovementStates.Standing != playerMovementState)
-            {
-                if (CanMove(moveDir, moveDistance/2))
-                {
-                    Vector3 moveDir3 = new Vector3(moveDir.x, moveDir.y, 0f);
-                    transform.position += moveDir3 * moveDistance;
 
+            if (CanMove(moveDir, moveDistance/2))
+            {
+                Vector3 moveDir3 = new Vector3(moveDir.x, moveDir.y, 0f);
+                transform.position += moveDir3 * moveDistance;
+
+        }
+            else
+            {
+                if (TryToInteract(moveDir))
+                {
+                    playerAnimator.PlayAttack();
                 }
                 else
                 {
-                    if (TryToInteract(moveDir))
-                    {
-                        playerAnimator.PlayAttack();
-                    }
-                    else
-                    {
-                        playerAnimator.PlayStop();
-                    }
-
-                    playerMovementState = MovementStates.Standing;
-                    AdjustPosition();
-                    PlayerEndMovement?.Invoke(this,EventArgs.Empty);
+                    playerAnimator.PlayStop();
                 }
-            }
 
+                playerMovementState = MovementStates.Standing;
+                AdjustPosition();
+            }
+        
     }
 
     public bool IsMoving()

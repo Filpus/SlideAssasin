@@ -42,15 +42,15 @@ ScriptedImporter:
   - _key: Player
     _asset: {fileID: 2926173975639912906, guid: e94aea3bba19ff943818cac5b6ac4e89, type: 3}
   - _key: Balcony
-    _asset: {fileID: 87876592056289900, guid: e6135a78ee3be544480de3e97f4ffc19, type: 3}
+    _asset: {instanceID: 0}
   - _key: Boss
     _asset: {fileID: 3142915896783910480, guid: ff776588ab976f646963f6bb22aea850, type: 3}
   - _key: Pilar
     _asset: {fileID: 5087657283798466464, guid: b4670a207e5d4c64d90dd64121c461f7, type: 3}
   - _key: Entrance
-    _asset: {fileID: 5111916981512506655, guid: 62d96093d6ce82949839023a0c25b780, type: 3}
+    _asset: {instanceID: 0}
   - _key: DangerZone
-    _asset: {fileID: 8930070513511842851, guid: 6f53c5e3ca53bc144a3c0b665f669d76, type: 3}
+    _asset: {instanceID: 0}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 

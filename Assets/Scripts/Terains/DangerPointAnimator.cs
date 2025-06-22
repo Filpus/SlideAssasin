@@ -4,7 +4,7 @@ using UnityEngine;
 public class DangerPointAnimator : MonoBehaviour
 {
     private Animator _animator;
-    private const string CHANGE_STATE = "ChangeState";
+    private const string IS_Acive = "IsActive";
 
     void Start()
     {
@@ -12,9 +12,15 @@ public class DangerPointAnimator : MonoBehaviour
     }
 
 
-    public void ChangeState()
+    public void Active()
     {
-        _animator.SetTrigger(CHANGE_STATE);
+        _animator.SetBool(IS_Acive,true );
     }
+
+    public void Disactive()
+    {
+        _animator.SetBool(IS_Acive, false);
+    }
+
 
 }

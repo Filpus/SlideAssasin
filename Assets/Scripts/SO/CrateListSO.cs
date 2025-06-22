@@ -2,7 +2,7 @@ using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class CrateList : MonoBehaviour
+public class CrateListSO : ScriptableObject
 {
 
     public Crate[] CratesList;
@@ -22,37 +22,4 @@ public class CrateList : MonoBehaviour
             crate.Close();
         }
     }
-
-    public void SwitchSelectedGroup(int id)
-    {
-        foreach (Crate crate in CratesList)
-        {
-            if (crate.group_id == id)
-            {
-                crate.SwitchState();
-            }
-        }
-    }
-    public void OpenSelectedGroup(int id)
-    {
-        foreach (Crate crate in CratesList)
-        {
-            if (crate.group_id == id)
-            {
-                crate.Open();
-            }
-        }
-    }
-
-    public void CloseSelectedGroup(int id)
-    {
-        foreach (Crate crate in CratesList)
-        {
-            if (crate.group_id == id)
-            {
-                crate.Close();
-            }        
-        }
-    }
-
 }

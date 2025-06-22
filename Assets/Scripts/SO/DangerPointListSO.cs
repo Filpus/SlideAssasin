@@ -1,28 +1,22 @@
-using UnityEngine;
-
 namespace Terains
 {
-    public class DangerPointList : MonoBehaviour
+    public class DangerPointListSO
     {
         public DangerPoint[] DangerPoints;
 
-
-        public void ActiveSelectedGroup(int id)
+        public void ActiveAll()
         {
             foreach (DangerPoint dangerPoint in DangerPoints)
             {
-                if (dangerPoint.groupId == id )
-                {
-                    dangerPoint.StartPreparing();
-                }
+                dangerPoint.Active();
             }
         }
 
-        public void MakeProgressForAll()
+        public void DisactiveAll()
         {
             foreach (DangerPoint dangerPoint in DangerPoints)
             {
-                dangerPoint.MakeProgress();
+                dangerPoint.Disactive();
             }
         }
     }
