@@ -6,7 +6,7 @@ public class CrateAnimator : MonoBehaviour
     private Animator _animator;
     private const string IS_OPEN = "IsOpen";
 
-    void Start()
+    void Awake()
     {
         this._animator = this.GetComponent<Animator>();
     }

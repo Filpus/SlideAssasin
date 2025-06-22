@@ -17,11 +17,11 @@ public class Player : MonoBehaviour
         Standing = 0,
         Dead
     }
-
-
+    
+    
     public static Player Instance { get; private set; }
-
-
+    
+    
     [SerializeField] private GameInput gameInput;
     [SerializeField] private LayerMask enemiesLayerMask;
     [SerializeField] private LayerMask obstaclesLayer;
@@ -30,14 +30,15 @@ public class Player : MonoBehaviour
 
     [SerializeField] private PlayerAnimator playerAnimator;
     [SerializeField] private PlayerAudio playerAudio;
-
+    
     public MovementStates playerMovementState;
 
-    public event EventHandler PlayerMoved;
+    public  event EventHandler PlayerMoved;
     public event EventHandler PlayerDie;
+    public event EventHandler PlayerEndMovement;
 
     private float playerSize = 1f;
-
+    
 
     private void Awake()
     {
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
             GameInput.Instance.OnMoveLeft -= Instance.InstanceOnOnMoveLeft;
             Instance.PlayerDie = null;
             Instance.PlayerMoved = null;
+            Instance.PlayerEndMovement = null;
 
 
             Destroy(Player.Instance.gameObject);
@@ -62,7 +64,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         GameInput.Instance.OnMoveUp += InstanceOnOnMoveUp;
-        GameInput.Instance.OnMoveDown += InstanceOnOnMoveDown;
+        GameInput.Instance.OnMoveDown += InstanceOnOnMoveDown; 
         GameInput.Instance.OnMoveRight += InstanceOnOnMoveRight;
         GameInput.Instance.OnMoveLeft += InstanceOnOnMoveLeft;
     }
@@ -75,48 +77,50 @@ public class Player : MonoBehaviour
 
     private void HandleMovement()
     {
-
-        Vector2 moveDir = Vector2.zero;
-        float moveDistance = moveSpeed * Time.deltaTime;
-        switch (playerMovementState)
-        {
-            case MovementStates.MovingUp:
-                moveDir = Vector2.up;
-                break;
-            case MovementStates.MovingDown:
-                moveDir = Vector2.down;
-                break;
-            case MovementStates.MovingLeft:
-                moveDir = Vector2.left;
-                break;
-            case MovementStates.MovingRight:
-                moveDir = Vector2.right;
-                break;
-        }
-
-        if (MovementStates.Standing != playerMovementState)
-        {
-            if (CanMove(moveDir, moveDistance / 2))
+        
+            Vector2 moveDir = Vector2.zero;
+            float moveDistance = moveSpeed * Time.deltaTime;
+            switch (playerMovementState)
             {
-                Vector3 moveDir3 = new Vector3(moveDir.x, moveDir.y, 0f);
-                transform.position += moveDir3 * moveDistance;
+                case MovementStates.MovingUp:
+                    moveDir = Vector2.up;
+                    break;
+                case MovementStates.MovingDown:
+                    moveDir = Vector2.down;
+                    break;
+                case MovementStates.MovingLeft:
+                    moveDir = Vector2.left;
+                    break;
+                case MovementStates.MovingRight:
+                    moveDir = Vector2.right;
+                    break;
             }
-            else
+
+            if (MovementStates.Standing != playerMovementState)
             {
-                if (TryToInteract(moveDir))
+                if (CanMove(moveDir, moveDistance))
                 {
-                    playerAnimator.PlayAttack();
+                    Vector3 moveDir3 = new Vector3(moveDir.x, moveDir.y, 0f);
+                    transform.position += moveDir3 * moveDistance;
+
                 }
                 else
                 {
-                    playerAnimator.PlayStop();
-                }
+                    if (TryToInteract(moveDir))
+                    {
+                        playerAnimator.PlayAttack();
+                    }
+                    else
+                    {
+                        playerAnimator.PlayStop();
+                    }
 
-                playerMovementState = MovementStates.Standing;
-                AdjustPosition();
+                    playerMovementState = MovementStates.Standing;
+                    AdjustPosition();
+                    PlayerEndMovement?.Invoke(this,EventArgs.Empty);
+                }
             }
 
-        }
     }
 
     public bool IsMoving()
@@ -126,9 +130,9 @@ public class Player : MonoBehaviour
 
     private bool CanMove(Vector2 moveDir, float moveDistance)
     {
-        return moveDir != Vector2.zero && !Physics2D.Raycast(transform.position, moveDir, playerSize / (float)2 + moveDistance, enemiesLayerMask | obstaclesLayer);
-
-
+        return moveDir != Vector2.zero && !Physics2D.Raycast(transform.position, moveDir, playerSize / (float)2 + moveDistance , enemiesLayerMask | obstaclesLayer);
+        
+        
     }
 
     private void AdjustPosition()
@@ -155,8 +159,7 @@ public class Player : MonoBehaviour
                 if (interactable.Interact(this))
                 {
                     playerAudio.PlayAttack();
-                }
-                ;
+                };
                 return true;
             }
         }
@@ -173,14 +176,14 @@ public class Player : MonoBehaviour
     }
     private void InstanceOnOnMoveUp(object sender, EventArgs e)
     {
-        if (playerMovementState == MovementStates.Standing & !GameManager.Instance.IsPaused & (playerMovementState != MovementStates.Dead))
+        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused & (playerMovementState != MovementStates.Dead))
         {
             float moveDistance = moveSpeed * Time.deltaTime;
 
             if (CanMove(Vector2.up, moveDistance))
             {
                 playerMovementState = MovementStates.MovingUp;
-
+                
                 PlayerMoved?.Invoke(this, EventArgs.Empty);
                 playerAnimator.PlayRunUp();
                 playerAudio.PlayDash();
@@ -191,7 +194,7 @@ public class Player : MonoBehaviour
 
     private void InstanceOnOnMoveDown(object sender, EventArgs e)
     {
-        if (playerMovementState == MovementStates.Standing & !GameManager.Instance.IsPaused & (playerMovementState != MovementStates.Dead))
+        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused & (playerMovementState != MovementStates.Dead))
         {
             float moveDistance = moveSpeed * Time.deltaTime;
 
@@ -202,12 +205,12 @@ public class Player : MonoBehaviour
                 playerAnimator.PlayRunDown();
                 playerAudio.PlayDash();
             }
-        }
+        }    
     }
 
     private void InstanceOnOnMoveLeft(object sender, EventArgs e)
     {
-        if (playerMovementState == MovementStates.Standing & !GameManager.Instance.IsPaused & (playerMovementState != MovementStates.Dead))
+        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused & (playerMovementState != MovementStates.Dead))
         {
             float moveDistance = moveSpeed * Time.deltaTime;
 
@@ -223,7 +226,7 @@ public class Player : MonoBehaviour
 
     private void InstanceOnOnMoveRight(object sender, EventArgs e)
     {
-        if (playerMovementState == MovementStates.Standing & !GameManager.Instance.IsPaused & (playerMovementState != MovementStates.Dead))
+        if (playerMovementState == MovementStates.Standing &! GameManager.Instance.IsPaused & (playerMovementState != MovementStates.Dead))
         {
             float moveDistance = moveSpeed * Time.deltaTime;
 
@@ -245,9 +248,9 @@ public class Player : MonoBehaviour
         GameInput.Instance.OnMoveLeft -= InstanceOnOnMoveLeft;
 
         if (Instance == this)
-        {
-            Instance = null;
-        }
+    {
+        Instance = null;
+    }
     }
 }
 
