@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Number: 5
   Name: Level5
-  EnemyNumber: 0
+  EnemyNumber: 6
   NextLevelName: Level6
   Dialog: 
   LevelPrefab: {fileID: 2312305689590111142, guid: 8ac6f457b80235542800a7efa3c0b5b1, type: 3}
