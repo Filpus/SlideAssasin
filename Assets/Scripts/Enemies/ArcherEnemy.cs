@@ -81,4 +81,9 @@ public class ArcherEnemy : BaseEnemy
 
         return true;
     }
+
+    public void OnDestroy()
+    {
+        GameManager.Instance.TurnHappened -= GameManagerOnTurnHappened;
+    }
 }

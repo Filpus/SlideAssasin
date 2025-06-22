@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
-    [SerializeField] private LvlExit levelExit;
     public event EventHandler TurnHappened;
     public bool IsPaused = false;
     void Awake()
@@ -32,7 +31,7 @@ public class GameManager : MonoBehaviour
         Player.Instance.PlayerDie += InstanceOnPlayerDie;
         GameInput.Instance.OnPause += InstanceOnOnPause;
         GameInput.Instance.OnReset += InstanceOnOnReset;
-        levelExit.OnEndLevel += LevelExitOnOnEndLevel;
+        LvlExit.Instance.OnEndLevel += LevelExitOnOnEndLevel;
     }
 
     private void InstanceOnPlayerDie(object sender, EventArgs e)
@@ -41,7 +40,7 @@ public class GameManager : MonoBehaviour
         _menuManager.ShowDeathScreen();
     }
 
-    private void LevelExitOnOnEndLevel(object sender, EventArgs e)
+    public void LevelExitOnOnEndLevel(object sender, EventArgs e)
     {
         IsPaused = true;
         if (levelInfo.Dialog != "")
@@ -58,10 +57,14 @@ public class GameManager : MonoBehaviour
         Quaternion oldRotation = level.transform.rotation;
         Destroy(level.gameObject);
 
-
+        Player.Instance.PlayerMoved -= PlayerOnPlayerMoved;
+        Player.Instance.PlayerDie -= InstanceOnPlayerDie;
 
         level = Instantiate(levelInfo.LevelPrefab, oldPosition, oldRotation);
         EnemyCounter = levelInfo.EnemyNumber;
+
+        Player.Instance.PlayerMoved += PlayerOnPlayerMoved;
+        Player.Instance.PlayerDie += InstanceOnPlayerDie;
     }
 
     private void InstanceOnOnPause(object sender, EventArgs e)

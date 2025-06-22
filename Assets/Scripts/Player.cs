@@ -43,6 +43,14 @@ public class Player : MonoBehaviour
     {
         if (Instance != null)
         {
+            GameInput.Instance.OnMoveUp -= Instance.InstanceOnOnMoveUp;
+            GameInput.Instance.OnMoveDown -= Instance.InstanceOnOnMoveDown;
+            GameInput.Instance.OnMoveRight -= Instance.InstanceOnOnMoveRight;
+            GameInput.Instance.OnMoveLeft -= Instance.InstanceOnOnMoveLeft;
+            Instance.PlayerDie = null;
+            Instance.PlayerMoved = null;
+
+
             Destroy(Player.Instance.gameObject);
             Debug.LogError("Jest wiele instancji gracza!");
         }
@@ -51,18 +59,10 @@ public class Player : MonoBehaviour
         playerMovementState = MovementStates.Standing;
     }
 
-    /*private void Start()
+    private void Start()
     {
         GameInput.Instance.OnMoveUp += InstanceOnOnMoveUp;
         GameInput.Instance.OnMoveDown += InstanceOnOnMoveDown; 
-        GameInput.Instance.OnMoveRight += InstanceOnOnMoveRight;
-        GameInput.Instance.OnMoveLeft += InstanceOnOnMoveLeft;
-    }*/
-
-    private void OnEnable()
-    {
-        GameInput.Instance.OnMoveUp += InstanceOnOnMoveUp;
-        GameInput.Instance.OnMoveDown += InstanceOnOnMoveDown;
         GameInput.Instance.OnMoveRight += InstanceOnOnMoveRight;
         GameInput.Instance.OnMoveLeft += InstanceOnOnMoveLeft;
     }
