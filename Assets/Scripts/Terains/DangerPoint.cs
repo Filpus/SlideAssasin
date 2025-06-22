@@ -4,33 +4,56 @@ using UnityEngine;
 public class DangerPoint : MonoBehaviour, ILDtkImportedEntity
 {
 
+    public enum DangerPointState
+    {
+        Safe,
+        Preparing,
+        Active
+    }
 
     private bool isActive = false;
-    private int groupId = 0;
-    [SerializeField] private DangerPointAnimator _pointAnimator;
+    public int groupId = 0;
+    [SerializeField] private DangerPointVisual _dangerPointVisual;
 
+
+    DangerPointState PointState = DangerPointState.Safe;
     public void OnLDtkImportEntity(EntityInstance entityInstance)
     {
         groupId = entityInstance.GetInt("group_id");
     }
 
 
-
-
-    public void Active()
+    public void StartPreparing()
     {
-        isActive = true;
-        _pointAnimator.Active();
+        if (PointState == DangerPointState.Safe)
+        {
+            PointState = DangerPointState.Preparing;
+            _dangerPointVisual.ChangeState(PointState);
+        }
     }
 
-    public void Disactive()
+
+    public void MakeProgress()
     {
-        isActive = false;
-        _pointAnimator.Disactive();
+        if (PointState == DangerPointState.Preparing)
+        {
+            PointState = DangerPointState.Active;
+            _dangerPointVisual.ChangeState(PointState);
+
+        } else if (PointState == DangerPointState.Active)
+        {
+            PointState = DangerPointState.Safe;
+            _dangerPointVisual.ChangeState(PointState);
+
+        }
     }
-    
-    private void OnCollisionEnter2D(Collision2D other)
+
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Player.Instance.Die();
+        if (PointState == DangerPointState.Active)
+        {
+            Player.Instance.Die();
+        }
     }
 }
