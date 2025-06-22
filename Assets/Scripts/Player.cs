@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
 
     public  event EventHandler PlayerMoved;
     public event EventHandler PlayerDie;
+    public event EventHandler PlayerEndMovement;
 
     private float playerSize = 1f;
     
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
             GameInput.Instance.OnMoveLeft -= Instance.InstanceOnOnMoveLeft;
             Instance.PlayerDie = null;
             Instance.PlayerMoved = null;
+            Instance.PlayerEndMovement = null;
 
 
             Destroy(Player.Instance.gameObject);
@@ -94,28 +96,31 @@ public class Player : MonoBehaviour
                     break;
             }
 
-
-            if (CanMove(moveDir, moveDistance/2))
+            if (MovementStates.Standing != playerMovementState)
             {
-                Vector3 moveDir3 = new Vector3(moveDir.x, moveDir.y, 0f);
-                transform.position += moveDir3 * moveDistance;
-
-        }
-            else
-            {
-                if (TryToInteract(moveDir))
+                if (CanMove(moveDir, moveDistance))
                 {
-                    playerAnimator.PlayAttack();
+                    Vector3 moveDir3 = new Vector3(moveDir.x, moveDir.y, 0f);
+                    transform.position += moveDir3 * moveDistance;
+
                 }
                 else
                 {
-                    playerAnimator.PlayStop();
-                }
+                    if (TryToInteract(moveDir))
+                    {
+                        playerAnimator.PlayAttack();
+                    }
+                    else
+                    {
+                        playerAnimator.PlayStop();
+                    }
 
-                playerMovementState = MovementStates.Standing;
-                AdjustPosition();
+                    playerMovementState = MovementStates.Standing;
+                    AdjustPosition();
+                    PlayerEndMovement?.Invoke(this,EventArgs.Empty);
+                }
             }
-        
+
     }
 
     public bool IsMoving()
@@ -138,13 +143,12 @@ public class Player : MonoBehaviour
 
     float RoundToNearestHalf(double value)
     {
-        float tmp = (float)Math.Round(value * 2f, MidpointRounding.AwayFromZero) / 2f;
-        return tmp;
+        return (float)Math.Round(value * 2, MidpointRounding.AwayFromZero) / 2;
     }
 
     private bool TryToInteract(Vector2 moveDir)
     {
-        float interactionDistance =1f;
+        float interactionDistance = 1f;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, moveDir, interactionDistance, enemiesLayerMask);
 
         if (hit.collider != null)
