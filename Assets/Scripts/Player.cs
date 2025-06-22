@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
 
             if (MovementStates.Standing != playerMovementState)
             {
-                if (CanMove(moveDir, moveDistance/2))
+                if (CanMove(moveDir, moveDistance))
                 {
                     Vector3 moveDir3 = new Vector3(moveDir.x, moveDir.y, 0f);
                     transform.position += moveDir3 * moveDistance;
@@ -143,13 +143,12 @@ public class Player : MonoBehaviour
 
     float RoundToNearestHalf(double value)
     {
-        float tmp = (float)Math.Round(value * 2f, MidpointRounding.AwayFromZero) / 2f;
-        return tmp;
+        return (float)Math.Round(value * 2, MidpointRounding.AwayFromZero) / 2;
     }
 
     private bool TryToInteract(Vector2 moveDir)
     {
-        float interactionDistance =1f;
+        float interactionDistance = 1f;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, moveDir, interactionDistance, enemiesLayerMask);
 
         if (hit.collider != null)
